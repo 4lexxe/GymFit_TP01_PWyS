@@ -26,7 +26,7 @@
     animation: fadeInUp 1s ease-out 0.3s;
 }
 
-/* Contenedor principal - Mejorado con diseño tipo newspaper */
+/* Contenedor principal */
 .blog-container {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -34,31 +34,12 @@
     padding: 3rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    background-color: var(--bg-color);
-    position: relative;
-}
-
-/* Decoración estilo periódico */
-.blog-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, 
-        var(--primary-color) 0%, var(--primary-color) 33%,
-        var(--secondary-color) 33%, var(--secondary-color) 66%,
-        var(--accent-color) 66%, var(--accent-color) 100%);
 }
 
 /* Sidebar */
 .blog-sidebar {
     padding-right: 1.5rem;
     border-right: 1px solid var(--border-color);
-    position: sticky;
-    top: 100px;
-    height: max-content;
 }
 
 .sidebar-widget {
@@ -71,11 +52,9 @@
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--primary-color);
     color: var(--text-color);
-    font-family: 'Georgia', serif; /* Fuente estilo periódico */
-    letter-spacing: 0.5px;
 }
 
-/* Sistema de tags mejorado */
+/* Tags y filtros */
 .tags-filter {
     margin-bottom: 1.5rem;
 }
@@ -94,30 +73,11 @@
     border-radius: 30px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.tag::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: -1;
+    transition: all 0.2s ease;
 }
 
 .tag:hover {
-    color: white;
-}
-
-.tag:hover::before {
-    opacity: 1;
+    background-color: var(--gray-300);
 }
 
 input[name="tag"] {
@@ -128,18 +88,11 @@ input[name="tag"] {
 #nutricion:checked ~ .tags-list label[for="nutricion"],
 #ejercicios:checked ~ .tags-list label[for="ejercicios"],
 #bienestar:checked ~ .tags-list label[for="bienestar"] {
-    background: none;
+    background-color: var(--primary-color);
     color: white;
 }
 
-#all-tags:checked ~ .tags-list label[for="all-tags"]::before,
-#nutricion:checked ~ .tags-list label[for="nutricion"]::before,
-#ejercicios:checked ~ .tags-list label[for="ejercicios"]::before,
-#bienestar:checked ~ .tags-list label[for="bienestar"]::before {
-    opacity: 1;
-}
-
-/* Artículos populares - estilo periódico */
+/* Artículos populares */
 .popular-posts {
     list-style: none;
     padding: 0;
@@ -148,20 +101,11 @@ input[name="tag"] {
 .popular-posts li {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px dotted var(--border-color); /* Estilo periódico */
-    position: relative;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .popular-posts li:last-child {
     border-bottom: none;
-}
-
-.popular-posts li::before {
-    content: '»';
-    position: absolute;
-    left: -15px;
-    color: var(--primary-color);
-    font-weight: bold;
 }
 
 .popular-posts a {
@@ -170,8 +114,6 @@ input[name="tag"] {
     margin-bottom: 0.3rem;
     font-weight: 500;
     transition: color 0.2s;
-    font-family: 'Georgia', serif; /* Fuente estilo periódico */
-    line-height: 1.4;
 }
 
 .popular-posts a:hover {
@@ -182,55 +124,33 @@ input[name="tag"] {
     font-size: 0.8rem;
     color: var(--gray-800);
     display: block;
-    font-style: italic; /* Estilo periódico */
 }
 
-/* Grid de blog posts - masonry mejorado para estilo periódico */
+/* Grid de blog posts */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2.5rem;
 }
 
-/* Hacer que algunos posts destaquen para dar apariencia de periódico */
-.blog-grid article:first-child {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.blog-grid article:first-child .post-image {
-    height: 100%;
-}
-
-.blog-grid article:first-child h2 {
-    font-size: 1.8rem;
-    font-family: 'Georgia', serif;
-}
-
-/* Tarjetas de posts con estilo periódico */
+/* Tarjetas de posts */
 .blog-post {
     background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     transition: transform 0.4s, box-shadow 0.4s;
-    position: relative;
-    border: 1px solid var(--border-color);
-    /* scroll reveal animation */
     opacity: 0;
     transform: translateY(30px);
+    animation: fadeInBlog 0.8s ease-out forwards;
+    animation-delay: calc(0.2s * var(--item-index, 0));
 }
 
-/* Scroll reveal effect */
-.reveal-on-scroll {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.reveal-on-scroll.active {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes fadeInBlog {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .blog-post:hover {
@@ -265,59 +185,41 @@ input[name="tag"] {
     margin-bottom: 1rem;
 }
 
-/* Estilos periódico para los tags */
 .tag-label {
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    border-radius: 0; /* Estilo periódico - rectangular */
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase; /* Estilo periódico */
-    letter-spacing: 1px; /* Estilo periódico */
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .nutricion-tag {
     background: rgba(76, 175, 80, 0.1);
     color: #4CAF50;
-    border-left: 3px solid #4CAF50;
 }
 
 .ejercicios-tag {
     background: rgba(33, 150, 243, 0.1);
     color: #2196F3;
-    border-left: 3px solid #2196F3;
 }
 
 .bienestar-tag {
     background: rgba(156, 39, 176, 0.1);
     color: #9C27B0;
-    border-left: 3px solid #9C27B0;
 }
 
-/* Estilo periódico para títulos */
 .blog-post h2 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
     line-height: 1.4;
-    font-family: 'Georgia', serif; /* Fuente estilo periódico */
-    font-weight: 700;
 }
 
-.blog-post p {
-    font-family: 'Georgia', serif; /* Fuente estilo periódico */
-    line-height: 1.7;
-    color: var(--text-color);
-}
-
-/* Mejorar el diseño "Read More" */
 .read-more {
     display: inline-block;
     margin-top: 1rem;
     color: var(--primary-color);
     font-weight: 500;
     position: relative;
-    font-family: 'Georgia', serif;
-    font-style: italic;
 }
 
 .read-more::after {
@@ -335,30 +237,7 @@ input[name="tag"] {
     width: 100%;
 }
 
-/* Mejorar el filtrado por tags - más fluido */
-#all-tags:checked ~ .blog-grid .blog-post {
-    display: grid;
-    animation: fadeIn 0.6s forwards;
-}
-
-#nutricion:checked ~ .blog-grid .blog-post:not(.nutricion),
-#ejercicios:checked ~ .blog-grid .blog-post:not(.ejercicios),
-#bienestar:checked ~ .blog-grid .blog-post:not(.bienestar) {
-    display: none;
-}
-
-#nutricion:checked ~ .blog-grid .nutricion,
-#ejercicios:checked ~ .blog-grid .ejercicios,
-#bienestar:checked ~ .blog-grid .bienestar {
-    animation: fadeIn 0.6s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Paginación con estilo periódico */
+/* Paginación */
 .pagination {
     margin-top: 3rem;
     display: flex;
@@ -375,10 +254,9 @@ input[name="tag"] {
     min-width: 40px;
     height: 40px;
     padding: 0 0.8rem;
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg);
+    border-radius: 6px;
+    background-color: var(--gray-200);
     color: var(--text-color);
-    font-family: 'Georgia', serif;
     transition: all 0.2s;
 }
 
@@ -386,12 +264,25 @@ input[name="tag"] {
 .page-link.active {
     background-color: var(--primary-color);
     color: white;
-    border-color: var(--primary-color);
 }
 
 .page-separator {
     margin: 0 0.3rem;
-    color: var(--gray-800);
+}
+
+.page-link.next {
+    padding: 0 1rem;
+}
+
+/* Filtrado por tags */
+#all-tags:checked ~ .blog-grid .blog-post {
+    display: grid;
+}
+
+#nutricion:checked ~ .blog-grid .blog-post:not(.nutricion),
+#ejercicios:checked ~ .blog-grid .blog-post:not(.ejercicios),
+#bienestar:checked ~ .blog-grid .blog-post:not(.bienestar) {
+    display: none;
 }
 
 /* Responsive */
@@ -410,12 +301,6 @@ input[name="tag"] {
     
     .tags-list {
         justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .blog-grid article:first-child {
-        grid-template-columns: 1fr;
     }
 }
 

@@ -255,7 +255,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    font-size: 0.95rem;
+    font-size: 0.95rem;  /* Texto ligeramente más pequeño */
 }
 
 .features li:last-child {
@@ -266,36 +266,33 @@
     opacity: 0.6;
 }
 
-/* Iconos de check y equis directamente al lado del texto */
+/* Iconos de check y equis más pequeños */
 .feature-icon {
     margin-right: 10px;
-    width: 16px;
-    height: 16px;
+    width: 16px;      /* Reducido de 18px a 16px */
+    height: 16px;     /* Reducido de 18px a 16px */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     font-style: normal;
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Reducido de 0.9rem a 0.8rem */
     flex-shrink: 0;
 }
 
 .features li:not(.disabled) .feature-icon {
     color: var(--success-color);
     font-weight: bold;
+    /* Reduciendo el tamaño del fondo */
     padding: 2px;
-    background-color: rgba(46, 125, 50, 0.08);
+    background-color: rgba(46, 125, 50, 0.08); /* Reducida la opacidad del fondo */
 }
 
 .features li.disabled .feature-icon {
     color: var(--error-color);
+    /* Reduciendo el tamaño del fondo */
     padding: 2px;
-    background-color: rgba(211, 47, 47, 0.08);
-}
-
-/* Asegurar que el texto esté correctamente posicionado */
-.features li .tooltip {
-    margin-left: auto;
+    background-color: rgba(211, 47, 47, 0.08); /* Reducida la opacidad del fondo */
 }
 
 /* Botón de selección */

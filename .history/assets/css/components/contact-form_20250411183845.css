@@ -1,0 +1,87 @@
+.contact-container {
+    display: grid;
+    place-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+    border-color: #4CAF50;
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #f44336;
+}
+
+.validation-message {
+    display: none;
+    color: #f44336;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -20px;
+}
+
+input:invalid:not(:placeholder-shown) ~ .validation-message {
+    display: block;
+}
+
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+button[type="submit"]:active .button-text {
+    display: none;
+}
+
+button[type="submit"]:active .spinner {
+    display: inline-block;
+}

@@ -314,7 +314,6 @@
                     <input type="radio" name="slider" id="item-2">
                     <input type="radio" name="slider" id="item-3">
                     <input type="radio" name="slider" id="item-4">
-                    <input type="radio" name="slider" id="item-5">
                     <div class="carousel-items">
                         <label class="carousel-item" for="item-1">
                             <div class="testimonial-card">
@@ -344,20 +343,16 @@
                                 <div class="testimonial-name">— Javier Pérez</div>
                             </div>
                         </label>
-                        <label class="carousel-item" for="item-5">
-                            <div class="testimonial-card">
-                                <div class="testimonial-avatar" data-initials="AM"></div>
-                                <p>"Las clases de yoga han mejorado mi flexibilidad y concentración en el trabajo. ¡Un cambio total!"</p>
-                                <div class="testimonial-name">— Ana Martínez</div>
-                            </div>
-                        </label>
                     </div>
                     <div class="carousel-nav">
                         <label for="item-1"></label>
                         <label for="item-2"></label>
                         <label for="item-3"></label>
                         <label for="item-4"></label>
-                        <label for="item-5"></label>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" id="prev-btn" aria-label="Testimonio anterior">❮</button>
+                        <button class="carousel-control next" id="next-btn" aria-label="Testimonio siguiente">❯</button>
                     </div>
                 </div>
             </div>
@@ -430,6 +425,78 @@
             console.log("Clic en toggle detectado");
             console.log("Estado de la clase dark-mode:", document.body.classList.contains('dark-mode'));
             console.log("Color de fondo actual:", getComputedStyle(document.body).backgroundColor);
+        });
+    </script>
+
+    <!-- Script para el carrusel automático de testimonios -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialCarousel = document.getElementById('testimonial-carousel');
+            const radioButtons = testimonialCarousel.querySelectorAll('input[name="slider"]');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+            let intervalId;
+
+            // Función para ir al siguiente testimonio
+            function goToNextSlide() {
+                currentIndex = (currentIndex + 1) % radioButtons.length;
+                radioButtons[currentIndex].checked = true;
+            }
+
+            // Función para ir al testimonio anterior
+            function goToPrevSlide() {
+                currentIndex = (currentIndex - 1 + radioButtons.length) % radioButtons.length;
+                radioButtons[currentIndex].checked = true;
+            }
+
+            // Inicializar currentIndex basado en el radio button seleccionado
+            radioButtons.forEach((radio, index) => {
+                if (radio.checked) {
+                    currentIndex = index;
+                }
+                
+                // Actualizar currentIndex cuando se selecciona manualmente
+                radio.addEventListener('change', () => {
+                    currentIndex = index;
+                    resetAutoplay();
+                });
+            });
+
+            // Navegación con botones
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                goToPrevSlide();
+                resetAutoplay();
+            });
+
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                goToNextSlide();
+                resetAutoplay();
+            });
+
+            // Iniciar autoplay
+            function startAutoplay() {
+                intervalId = setInterval(goToNextSlide, 5000); // Cambiar testimonio cada 5 segundos
+            }
+
+            // Reiniciar autoplay
+            function resetAutoplay() {
+                clearInterval(intervalId);
+                startAutoplay();
+            }
+
+            // Pausar autoplay cuando el mouse está sobre el carrusel
+            testimonialCarousel.addEventListener('mouseenter', () => {
+                clearInterval(intervalId);
+            });
+
+            // Reanudar autoplay cuando el mouse sale del carrusel
+            testimonialCarousel.addEventListener('mouseleave', () => {
+                startAutoplay();
+            });
+
+            // Iniciar el carrusel automático
+            startAutoplay();
         });
     </script>
 </body>
