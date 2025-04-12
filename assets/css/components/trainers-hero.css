@@ -1,0 +1,59 @@
+.trainers-hero {
+    height: 40vh;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.trainers-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/trainers-bg-pattern.svg');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.trainers-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.trainers-hero p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .trainers-hero {
+        height: 35vh;
+    }
+    
+    .trainers-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .trainers-hero p {
+        font-size: 1.2rem;
+    }
+}

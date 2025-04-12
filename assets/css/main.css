@@ -1,0 +1,78 @@
+/* Importar todos los estilos */
+@import 'utils/colors.css';
+@import 'utils/typography.css';
+@import 'utils/animations.css';
+@import 'utils/accessibility.css';
+@import 'components/header.css';
+@import 'components/hero.css';
+@import 'components/cards.css';
+@import 'components/carousel.css';
+@import 'components/counter.css';
+@import 'components/footer.css';
+@import 'components/gallery.css';
+@import 'components/schedule.css';
+@import 'components/trainer-card.css';
+@import 'components/skill-bars.css';
+@import 'components/rating.css';
+@import 'components/contact-form.css';
+@import 'components/modal.css';
+@import 'components/pricing.css';
+@import 'components/blog.css';
+@import 'components/comments.css';
+@import 'components/darkmode-toggle.css';
+@import 'utils/scroll-reveal.css';
+@import 'layout/grid.css';
+@import 'layout/responsive.css';
+@import 'utils/effects.css';
+@import 'components/classes-hero.css';
+@import 'components/trainers-hero.css';
+@import 'components/features.css';
+@import 'components/testimonials.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height-base);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Transiciones globales */
+a, button {
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+/* Estilos de texto globales */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+/* Helpers de espaciado */
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }

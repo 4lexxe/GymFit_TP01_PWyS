@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymFit - Tu gimnasio de confianza</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Preload para recursos esenciales -->
+    <link rel="preload" href="assets/video/gym-background.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="assets/css/utils/colors.css" as="style">
+    <!-- Forzar un reflow de CSS agregando esto al final -->
+    <style>
+        body.dark-mode {
+            background-color: #121212 !important;
+            color: #f8f9fa !important;
+        }
+    </style>
+</head>
+<body class="snap-container">
+    <!-- Link de navegación accesible -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="header clip-diagonal">
+        <nav class="nav-main">
+            <a href="/" class="logo">GymFit</a>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="pages/clases.html">Clases</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Clases Grupales</h3>
+                                    <ul>
+                                        <li><a href="pages/clases.html#yoga">Yoga</a></li>
+                                        <li><a href="pages/clases.html#pilates">Pilates</a></li>
+                                        <li><a href="pages/clases.html#spinning">Spinning</a></li>
+                                        <li><a href="pages/clases.html#zumba">Zumba</a></li>
+                                        <li><a href="pages/clases.html#boxeo">Boxeo</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Entrenamiento Funcional</h3>
+                                    <ul>
+                                        <li><a href="pages/clases.html#crossfit">CrossFit</a></li>
+                                        <li><a href="pages/clases.html#hiit">HIIT</a></li>
+                                        <li><a href="pages/clases.html#tabata">Tabata</a></li>
+                                        <li><a href="pages/clases.html#funcional">Entrenamiento Funcional</a></li>
+                                        <li><a href="pages/clases.html#circuit">Circuit Training</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Musculación</h3>
+                                    <ul>
+                                        <li><a href="pages/clases.html#fuerza">Entrenamiento de Fuerza</a></li>
+                                        <li><a href="pages/clases.html#hipertrofia">Hipertrofia</a></li>
+                                        <li><a href="pages/clases.html#powerlifting">Powerlifting</a></li>
+                                        <li><a href="pages/clases.html#calistenia">Calistenia</a></li>
+                                        <li><a href="pages/clases.html#rehabilitacion">Rehabilitación</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Bienestar</h3>
+                                    <ul>
+                                        <li><a href="pages/clases.html#meditacion">Meditación</a></li>
+                                        <li><a href="pages/clases.html#estiramiento">Estiramientos</a></li>
+                                        <li><a href="pages/clases.html#postura">Corrección Postural</a></li>
+                                        <li><a href="pages/clases.html#respiracion">Técnicas de Respiración</a></li>
+                                        <li><a href="pages/clases.html#mindfulness">Mindfulness</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mega-menu-promo">
+                                <div class="promo-card">
+                                    <img src="assets/images/promo.png" alt="Clase destacada del mes">
+                                    <div class="promo-card-content">
+                                        <h4>Clase destacada del mes</h4>
+                                    </div>
+                                </div>
+                                <div class="promo-card">
+                                    <img src="assets/images/promo2.png" alt="Nuevas clases">
+                                    <div class="promo-card-content">
+                                        <h4>¡Nuevas clases disponibles!</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages/entrenadores.html">Servicios</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Entrenamiento Personal</h3>
+                                    <ul>
+                                        <li><a href="pages/entrenadores.html">Nuestros Entrenadores</a></li>
+                                        <li><a href="pages/servicios.html#personal">Sesiones Personalizadas</a></li>
+                                        <li><a href="pages/servicios.html#pareja">Entrenamiento en Pareja</a></li>
+                                        <li><a href="pages/servicios.html#grupos">Grupos Reducidos</a></li>
+                                        <li><a href="pages/servicios.html#online">Entrenamiento Online</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Evaluación Fitness</h3>
+                                    <ul>
+                                        <li><a href="pages/servicios.html#inicial">Evaluación Inicial</a></li>
+                                        <li><a href="pages/servicios.html#composicion">Composición Corporal</a></li>
+                                        <li><a href="pages/servicios.html#rendimiento">Test de Rendimiento</a></li>
+                                        <li><a href="pages/servicios.html#postural">Análisis Postural</a></li>
+                                        <li><a href="pages/servicios.html#seguimiento">Seguimiento Mensual</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Nutrición</h3>
+                                    <ul>
+                                        <li><a href="pages/servicios.html#nutricion">Consulta Nutricional</a></li>
+                                        <li><a href="pages/servicios.html#plan">Plan Alimentario</a></li>
+                                        <li><a href="pages/servicios.html#dietas">Dietas Especiales</a></li>
+                                        <li><a href="pages/servicios.html#suplementacion">Suplementación</a></li>
+                                        <li><a href="pages/servicios.html#educacion">Educación Nutricional</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Servicios Premium</h3>
+                                    <ul>
+                                        <li><a href="pages/servicios.html#elite">Programa Elite</a></li>
+                                        <li><a href="pages/servicios.html#corporativo">Fitness Corporativo</a></li>
+                                        <li><a href="pages/servicios.html#rehabilitacion">Rehabilitación Física</a></li>
+                                        <li><a href="pages/servicios.html#spa">Spa y Recuperación</a></li>
+                                        <li><a href="pages/servicios.html#deportistas">Preparación para Deportistas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mega-menu-promo">
+                                <div class="promo-card">
+                                    <img src="assets/images/promo.png" alt="Evaluación gratuita">
+                                    <div class="promo-card-content">
+                                        <h4>Primera evaluación gratuita</h4>
+                                    </div>
+                                </div>
+                                <div class="promo-card">
+                                    <img src="assets/images/promo2.png" alt="Pack familiar">
+                                    <div class="promo-card-content"></div>
+                                        <h4>Pack familiar: 20% descuento</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages/instalaciones.html">Instalaciones</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Áreas de Entrenamiento</h3>
+                                    <ul>
+                                        <li><a href="pages/instalaciones.html#musculacion">Área de Musculación</a></li>
+                                        <li><a href="pages/instalaciones.html#cardio">Zona Cardio</a></li>
+                                        <li><a href="pages/instalaciones.html#funcional">Área Funcional</a></li>
+                                        <li><a href="pages/instalaciones.html#cycling">Sala de Cycling</a></li>
+                                        <li><a href="pages/instalaciones.html#studios">Studios de Clases</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Comodidades</h3>
+                                    <ul>
+                                        <li><a href="pages/instalaciones.html#vestuarios">Vestuarios</a></li>
+                                        <li><a href="pages/instalaciones.html#duchas">Duchas</a></li>
+                                        <li><a href="pages/instalaciones.html#lockers">Lockers Personales</a></li>
+                                        <li><a href="pages/instalaciones.html#wifi">WiFi Gratis</a></li>
+                                        <li><a href="pages/instalaciones.html#parking">Estacionamiento</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Zona de Bienestar</h3>
+                                    <ul>
+                                        <li><a href="pages/instalaciones.html#sauna">Sauna</a></li>
+                                        <li><a href="pages/instalaciones.html#jacuzzi">Jacuzzi</a></li>
+                                        <li><a href="pages/instalaciones.html#spa">Spa</a></li>
+                                        <li><a href="pages/instalaciones.html#masaje">Sala de Masajes</a></li>
+                                        <li><a href="pages/instalaciones.html#recuperacion">Área de Recuperación</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Otros Servicios</h3>
+                                    <ul>
+                                        <li><a href="pages/instalaciones.html#cafeteria">Cafetería Saludable</a></li>
+                                        <li><a href="pages/instalaciones.html#tienda">Tienda de Suplementos</a></li>
+                                        <li><a href="pages/instalaciones.html#guarderia">Guardería Infantil</a></li>
+                                        <li><a href="pages/instalaciones.html#consultorios">Consultorios</a></li>
+                                        <li><a href="pages/instalaciones.html#terraza">Terraza Fitness</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mega-menu-promo">
+                                <div class="promo-card">
+                                    <img src="assets/images/ejercicio.png" alt="Tour Virtual">
+                                    <div class="promo-card-content">
+                                        <h4>Tour Virtual 360°</h4>
+                                    </div>
+                                </div>
+                                <div class="promo-card">
+                                    <img src="assets/images/musculacionbasica.png" alt="Nuevas máquinas">
+                                    <div class="promo-card-content">
+                                        <h4>Nuevas máquinas: Technogym</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="pages/precios.html">Precios</a></li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                    <li><a href="pages/contacto.html" class="btn-contact">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero snap-section">
+            <video autoplay muted loop class="hero-video" aria-hidden="true">
+                <source src="assets/video/gym-background.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1 class="animated fadeInUp">Transforma tu vida</h1>
+                <p class="animated fadeInUp">Comienza tu viaje fitness hoy</p>
+                <a href="pages/precios.html" class="cta-button" aria-label="Empezar ahora con nuestros planes">Empezar ahora</a>
+            </div>
+        </section>
+
+        <section class="features snap-section">
+            <div class="container">
+                <h2 class="section-title">¿Por qué elegirnos?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🏋️‍♂️</div>
+                        <h3>Equipamiento moderno</h3>
+                        <p>Las últimas máquinas y equipos para optimizar tu entrenamiento.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👨‍🏫</div>
+                        <h3>Entrenadores expertos</h3>
+                        <p>Profesionales certificados para guiar tu progreso.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🕰️</div>
+                        <h3>Horario flexible</h3>
+                        <p>Abierto todos los días con amplios horarios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-classes snap-section" aria-labelledby="featured-classes-title">
+            <div class="container">
+                <h2 id="featured-classes-title" class="section-title float">Clases Destacadas</h2>
+                <div class="cards-container">
+                    <article class="card elevation-hover">
+                        <img src="assets/images/yoga.png" alt="Personas practicando yoga en grupo">
+                        <div class="card-content">
+                            <h3>Yoga</h3>
+                            <p>Encuentra tu equilibrio interior y mejora tu flexibilidad con nuestras clases de yoga para todos los niveles.</p>
+                            <a href="pages/clases.html#yoga" class="card-button">Ver detalles</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/crossfit.png" alt="CrossFit Class">
+                        <div class="card-content">
+                            <h3>CrossFit</h3>
+                            <p>Entrena a alta intensidad con ejercicios funcionales que mejorarán tu fuerza y resistencia.</p>
+                            <a href="pages/clases.html#crossfit" class="card-button">Ver detalles</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/spinning.png" alt="Spinning Class">
+                        <div class="card-content">
+                            <h3>Spinning</h3>
+                            <p>Quema calorías con nuestras energéticas clases de spinning con música motivadora.</p>
+                            <a href="pages/clases.html#spinning" class="card-button">Ver detalles</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="counter snap-section">
+            <div class="container">
+                <div class="counter-grid">
+                    <div class="counter-item pulse">
+                        <span class="counter-number">500+</span>
+                        <span class="counter-text">Socios satisfechos</span>
+                    </div>
+                    <div class="counter-item pulse">
+                        <span class="counter-number">30+</span>
+                        <span class="counter-text">Clases semanales</span>
+                    </div>
+                    <div class="counter-item pulse">
+                        <span class="counter-number">15</span>
+                        <span class="counter-text">Entrenadores expertos</span>
+                    </div>
+                    <div class="counter-item pulse">
+                        <span class="counter-number">10</span>
+                        <span class="counter-text">Años de experiencia</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <div class="carousel-container" id="testimonial-carousel">
+                    <input type="radio" name="slider" id="item-1" checked>
+                    <input type="radio" name="slider" id="item-2">
+                    <input type="radio" name="slider" id="item-3">
+                    <input type="radio" name="slider" id="item-4">
+                    <div class="carousel-items">
+                        <label class="carousel-item" for="item-1">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar" data-initials="MG"></div>
+                                <p>"Increíble ambiente y resultados. En solo tres meses logré mi meta de tonificación."</p>
+                                <div class="testimonial-name">— María González</div>
+                            </div>
+                        </label>
+                        <label class="carousel-item" for="item-2">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar" data-initials="RS"></div>
+                                <p>"Los mejores entrenadores. Siempre atentos y dando consejos personalizados."</p>
+                                <div class="testimonial-name">— Roberto Sánchez</div>
+                            </div>
+                        </label>
+                        <label class="carousel-item" for="item-3">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar" data-initials="LR"></div>
+                                <p>"Instalaciones de primera y equipamiento moderno. Lo recomiendo totalmente."</p>
+                                <div class="testimonial-name">— Lucía Rodríguez</div>
+                            </div>
+                        </label>
+                        <label class="carousel-item" for="item-4">
+                            <div class="testimonial-card">
+                                <div class="testimonial-avatar" data-initials="JP"></div>
+                                <p>"El programa de nutrición complementario a mi entrenamiento cambió mi vida por completo."</p>
+                                <div class="testimonial-name">— Javier Pérez</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="carousel-nav">
+                        <label for="item-1"></label>
+                        <label for="item-2"></label>
+                        <label for="item-3"></label>
+                        <label for="item-4"></label>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev" id="prev-btn" aria-label="Testimonio anterior">❮</button>
+                        <button class="carousel-control next" id="next-btn" aria-label="Testimonio siguiente">❯</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>¿Listo para transformar tu vida?</h2>
+                <p>Únete ahora y obtén un 20% de descuento en tu primera mensualidad</p>
+                <a href="pages/contacto.html" class="cta-button">Contáctanos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">GymFit</h3>
+                    <p>Tu gimnasio de confianza para alcanzar tus metas fitness con los mejores profesionales.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Enlaces rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="pages/clases.html">Clases</a></li>
+                        <li><a href="pages/entrenadores.html">Entrenadores</a></li>
+                        <li><a href="pages/precios.html">Precios</a></li>
+                        <li><a href="pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu email">
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Ubicación</h3>
+                    <p>Facultad de Ingeniería - UNJu<br>Av. Italia esquina Martiarena<br>San Salvador de Jujuy, Argentina</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">FB</a>
+                        <a href="#" class="social-link">IG</a>
+                        <a href="#" class="social-link">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 GymFit. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Toggle de modo oscuro con estructura mejorada y mejor posición -->
+    <div class="theme-toggle-container">
+        <label class="theme-toggle" aria-label="Cambiar tema claro/oscuro">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="theme-toggle-slider" role="switch" aria-pressed="false"></span>
+        </label>
+    </div>
+    
+    <!-- Asegurar que el script se carga correctamente -->
+    <script src="assets/js/darkmode.js"></script>
+    
+    <!-- Script para verificar que el toggle funciona -->
+    <script>
+        // Verificar que el selector dark-mode se está aplicando correctamente
+        console.log("Verificando modo oscuro");
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            console.log("Clic en toggle detectado");
+            console.log("Estado de la clase dark-mode:", document.body.classList.contains('dark-mode'));
+            console.log("Color de fondo actual:", getComputedStyle(document.body).backgroundColor);
+        });
+    </script>
+
+    <!-- Script para el carrusel automático de testimonios -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialCarousel = document.getElementById('testimonial-carousel');
+            const radioButtons = testimonialCarousel.querySelectorAll('input[name="slider"]');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+            let intervalId;
+
+            // Función para ir al siguiente testimonio
+            function goToNextSlide() {
+                currentIndex = (currentIndex + 1) % radioButtons.length;
+                radioButtons[currentIndex].checked = true;
+            }
+
+            // Función para ir al testimonio anterior
+            function goToPrevSlide() {
+                currentIndex = (currentIndex - 1 + radioButtons.length) % radioButtons.length;
+                radioButtons[currentIndex].checked = true;
+            }
+
+            // Inicializar currentIndex basado en el radio button seleccionado
+            radioButtons.forEach((radio, index) => {
+                if (radio.checked) {
+                    currentIndex = index;
+                }
+                
+                // Actualizar currentIndex cuando se selecciona manualmente
+                radio.addEventListener('change', () => {
+                    currentIndex = index;
+                    resetAutoplay();
+                });
+            });
+
+            // Navegación con botones
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                goToPrevSlide();
+                resetAutoplay();
+            });
+
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                goToNextSlide();
+                resetAutoplay();
+            });
+
+            // Iniciar autoplay
+            function startAutoplay() {
+                intervalId = setInterval(goToNextSlide, 5000); // Cambiar testimonio cada 5 segundos
+            }
+
+            // Reiniciar autoplay
+            function resetAutoplay() {
+                clearInterval(intervalId);
+                startAutoplay();
+            }
+
+            // Pausar autoplay cuando el mouse está sobre el carrusel
+            testimonialCarousel.addEventListener('mouseenter', () => {
+                clearInterval(intervalId);
+            });
+
+            // Reanudar autoplay cuando el mouse sale del carrusel
+            testimonialCarousel.addEventListener('mouseleave', () => {
+                startAutoplay();
+            });
+
+            // Iniciar el carrusel automático
+            startAutoplay();
+        });
+    </script>
+</body>
+</html>

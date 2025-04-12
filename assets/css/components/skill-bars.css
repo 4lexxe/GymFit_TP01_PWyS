@@ -1,0 +1,33 @@
+.skill-bars {
+    padding: 1rem;
+}
+
+.skill {
+    margin-bottom: 1rem;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.bar {
+    background: #eee;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4CAF50;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: fillBar 1s ease-out forwards;
+}
+
+@keyframes fillBar {
+    to {
+        transform: scaleX(1);
+    }
+}

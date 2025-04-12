@@ -1,0 +1,448 @@
+/* Hero de precios */
+.pricing-hero {
+    height: 40vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.pricing-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.pricing-hero p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.3s;
+}
+
+/* Contenedor principal */
+.pricing-container {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Toggle de plan mensual/anual - mejorado */
+.pricing-toggle {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pricing-checkbox {
+    display: none;
+}
+
+.pricing-label {
+    background: var(--gray-200);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.pricing-label span {
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s;
+    z-index: 1;
+    font-weight: 500;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(50% - 10px);
+    height: calc(100% - 10px);
+    background: var(--primary-color);
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+/* Al check, mueve el slider */
+.pricing-checkbox:checked ~ .pricing-label .toggle-slider {
+    transform: translateX(100%);
+}
+
+/* Cambios de colores del texto */
+.pricing-checkbox:checked ~ .pricing-label span:first-child {
+    color: var(--text-color);
+}
+
+.pricing-checkbox:checked ~ .pricing-label span:last-child {
+    color: white;
+}
+
+.pricing-checkbox:not(:checked) ~ .pricing-label span:first-child {
+    color: white;
+}
+
+.pricing-checkbox:not(:checked) ~ .pricing-label span:last-child {
+    color: var(--text-color);
+}
+
+/* Mostrar/ocultar los precios mensuales/anuales */
+.monthly, .annual {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Animación para cambio de precios */
+.price-changing {
+    animation: pricePulse 0.5s;
+}
+
+@keyframes pricePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* Cuando se cambia al plan anual (checkbox checked) */
+.pricing-checkbox:checked ~ .pricing-grid .price .monthly {
+    display: none;
+}
+
+.pricing-checkbox:checked ~ .pricing-grid .price .annual {
+    display: inline-block;
+    animation: fadeNum 0.5s forwards;
+}
+
+/* Cuando se muestra el plan mensual (checkbox no checked) */
+.pricing-checkbox:not(:checked) ~ .pricing-grid .price .annual {
+    display: none;
+}
+
+.pricing-checkbox:not(:checked) ~ .pricing-grid .price .monthly {
+    display: inline-block;
+    animation: fadeNum 0.5s forwards;
+}
+
+/* Mostrar el ahorro solo si es anual */
+.savings {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    height: 1.2rem;
+}
+
+.pricing-checkbox:checked ~ .pricing-grid .savings {
+    opacity: 1;
+}
+
+/* Animación para cambio de números */
+@keyframes fadeNum {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grid de precios */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjetas de precios */
+.pricing-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.featured:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.card-badge {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.popular {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    transform: rotate(45deg);
+    width: 150px;
+}
+
+/* Estilos del precio */
+.price {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-weight: 600;
+}
+
+.price .currency {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.price .monthly,
+.price .annual {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.price .period {
+    font-size: 1rem;
+    color: var(--gray-800);
+    margin-left: 5px;
+}
+
+.savings {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de características */
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.features li {
+    padding: 0.7rem 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;  /* Texto ligeramente más pequeño */
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.features li.disabled {
+    opacity: 0.6;
+}
+
+/* Iconos de check y equis más pequeños */
+.feature-icon {
+    margin-right: 10px;
+    width: 16px;      /* Reducido de 18px a 16px */
+    height: 16px;     /* Reducido de 18px a 16px */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-style: normal;
+    font-size: 0.8rem; /* Reducido de 0.9rem a 0.8rem */
+    flex-shrink: 0;
+}
+
+.features li:not(.disabled) .feature-icon {
+    color: var(--success-color);
+    font-weight: bold;
+    /* Reduciendo el tamaño del fondo */
+    padding: 2px;
+    background-color: rgba(46, 125, 50, 0.08); /* Reducida la opacidad del fondo */
+}
+
+.features li.disabled .feature-icon {
+    color: var(--error-color);
+    /* Reduciendo el tamaño del fondo */
+    padding: 2px;
+    background-color: rgba(211, 47, 47, 0.08); /* Reducida la opacidad del fondo */
+}
+
+/* Botón de selección */
+.select-plan {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.select-plan:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.select-plan.featured {
+    background: var(--secondary-color);
+}
+
+.select-plan.featured:hover {
+    background: var(--primary-color);
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    cursor: help;
+    margin-left: 0.5rem;
+    color: var(--gray-800);
+}
+
+.tooltip[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: var(--gray-900);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 10;
+    width: max-content;
+    max-width: 250px;
+}
+
+.tooltip[data-tooltip]:after {
+    content: '';
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--gray-900) transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.tooltip:hover[data-tooltip]:before,
+.tooltip:hover[data-tooltip]:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* FAQ Section */
+.pricing-faq {
+    margin-top: 5rem;
+    padding: 2rem;
+    background: var(--gray-100);
+    border-radius: 10px;
+}
+
+.pricing-faq h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-list details {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-list summary {
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    font-weight: 500;
+    transition: background 0.3s;
+    position: relative;
+}
+
+.faq-list summary:hover {
+    background-color: var(--gray-200);
+}
+
+.faq-list summary::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.3s;
+}
+
+.faq-list details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-list details p {
+    padding: 1rem;
+    margin: 0;
+    background-color: var(--card-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured {
+        transform: none;
+        order: -1;
+    }
+    
+    .featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .pricing-hero h1 {
+        font-size: 2.5rem;
+    }
+}

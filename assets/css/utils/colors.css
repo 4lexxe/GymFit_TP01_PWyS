@@ -1,0 +1,78 @@
+:root {
+    /* Colores principales */
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --accent-color: #FF4081;
+    
+    /* Escala de grises */
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+
+    /* Colores de estado - mejorados para accesibilidad */
+    --success-color: #2e7d32; /* AA compliant */
+    --warning-color: #f57c00; /* AA compliant */
+    --error-color: #d32f2f;   /* AAA compliant */
+
+    /* Variables para modo oscuro/claro */
+    --bg-color: #ffffff;
+    --bg-alt-color: #f8f9fa;
+    --text-color: var(--gray-900);
+    --text-muted: var(--gray-600);
+    --card-bg: #ffffff;
+    --card-border: var(--gray-300);
+    --border-color: var(--gray-300);
+    --focus-ring-color: rgba(33, 150, 243, 0.5);
+    
+    /* Shadow y efectos */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+    
+    /* Transiciones */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease-in-out;
+}
+
+/* Modo oscuro basado en preferencia del sistema */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Variables para modo oscuro */
+        --bg-color: #121212;
+        --bg-alt-color: #1e1e1e;
+        --text-color: #f8f9fa;
+        --text-muted: #adb5bd;
+        --card-bg: #1e1e1e;
+        --card-border: #333;
+        --border-color: #333;
+        
+        /* Ajuste de sombras para modo oscuro */
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 8px rgba(0,0,0,0.3);
+        --shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
+    }
+}
+
+/* Clases para modo oscuro manual */
+body.dark-mode {
+    /* Variables para modo oscuro */
+    --bg-color: #121212;
+    --bg-alt-color: #1e1e1e;
+    --text-color: #f8f9fa;
+    --text-muted: #adb5bd;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --border-color: #333;
+    
+    /* Ajuste de sombras para modo oscuro */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
+}

@@ -1,0 +1,180 @@
+/* Sistema de grid uniforme para las clases */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+/* Tamaño fijo para todas las tarjetas de clases */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInGrid 0.6s ease forwards;
+    animation-delay: calc(0.1s * var(--item-index, 0));
+    height: 350px; /* Altura fija para todas las cards */
+    display: block;
+    opacity: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    display: block; /* Eliminar espacio extra debajo de la imagen */
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    z-index: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    padding: 2rem;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(20px);
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.overlay p {
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Filtros mejorados con animación */
+.filter-controls {
+    background-color: var(--bg-color);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filter-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-nav label {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.filter-nav label:hover {
+    background-color: var(--gray-300);
+    transform: translateY(-2px);
+}
+
+input[name="filter"] {
+    display: none;
+}
+
+/* Estilos específicos para cada filtro */
+#all:checked ~ .filter-nav label[for="all"],
+#musculacion:checked ~ .filter-nav label[for="musculacion"],
+#crossfit:checked ~ .filter-nav label[for="crossfit"],
+#yoga:checked ~ .filter-nav label[for="yoga"],
+#spinning:checked ~ .filter-nav label[for="spinning"] {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Filtros con transición suave */
+.gallery-item {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: block;
+    opacity: 1;
+}
+
+/* Mostrar todos los elementos cuando "all" está seleccionado */
+#all:checked ~ .gallery-grid .gallery-item {
+    opacity: 1;
+    display: block;
+}
+
+/* Ocultar los elementos que no pertenecen a la categoría seleccionada */
+#musculacion:checked ~ .gallery-grid .gallery-item:not(.musculacion),
+#crossfit:checked ~ .gallery-grid .gallery-item:not(.crossfit),
+#yoga:checked ~ .gallery-grid .gallery-item:not(.yoga),
+#spinning:checked ~ .gallery-grid .gallery-item:not(.spinning) {
+    display: none;
+}
+
+/* Animación para cuando los elementos aparecen */
+@keyframes fadeInGrid {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .gallery-item {
+        height: 320px; /* Ligeramente más pequeño en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .filter-nav label {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-item {
+        height: 280px; /* Aún más pequeño en móviles */
+    }
+}

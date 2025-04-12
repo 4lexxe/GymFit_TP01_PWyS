@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases - GymFit</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <header class="header clip-diagonal">
+        <nav class="nav-main">
+            <a href="/" class="logo">GymFit</a>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="clases.html">Clases</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Clases Grupales</h3>
+                                    <ul>
+                                        <li><a href="#yoga">Yoga</a></li>
+                                        <li><a href="#pilates">Pilates</a></li>
+                                        <li><a href="#spinning">Spinning</a></li>
+                                        <li><a href="#crossfit">CrossFit</a></li>
+                                        <li><a href="#musculacion">Musculación</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="classes-hero">
+        <h1>Nuestras Clases</h1>
+        <p>Descubre la variedad de actividades que tenemos para ti</p>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-controls">
+            <input type="radio" name="filter" id="all" checked>
+            <input type="radio" name="filter" id="musculacion">
+            <input type="radio" name="filter" id="crossfit">
+            <input type="radio" name="filter" id="yoga">
+            <input type="radio" name="filter" id="spinning">
+
+            <nav class="filter-nav">
+                <label for="all" class="btn-filter">Todas</label>
+                <label for="musculacion" class="btn-filter">Musculación</label>
+                <label for="crossfit" class="btn-filter">CrossFit</label>
+                <label for="yoga" class="btn-filter">Yoga</label>
+                <label for="spinning" class="btn-filter">Spinning</label>
+            </nav>
+        </div>
+
+        <div class="gallery-grid">
+            <article class="gallery-item musculacion" style="--item-index: 1">
+                <img src="../assets/images/musculacionbasica.png" alt="Musculación">
+                <div class="overlay">
+                    <h3>Musculación Básica</h3>
+                    <p>Aprende técnicas fundamentales para el desarrollo muscular</p>
+                </div>
+            </article>
+            <article class="gallery-item yoga" style="--item-index: 2">
+                <img src="../assets/images/yoga.png" alt="Yoga">
+                <div class="overlay">
+                    <h3>Yoga Flow</h3>
+                    <p>Encuentra tu equilibrio interior con nuestras clases de yoga</p>
+                </div>
+            </article>
+            <article class="gallery-item crossfit" style="--item-index: 3">
+                <img src="../assets/images/crossfit.png" alt="CrossFit">
+                <div class="overlay">
+                    <h3>CrossFit Intensivo</h3>
+                    <p>Entrena tu cuerpo al máximo con nuestras sesiones HIIT</p>
+                </div>
+            </article>
+            <article class="gallery-item spinning" style="--item-index: 4">
+                <img src="../assets/images/spinning.png" alt="Spinning">
+                <div class="overlay">
+                    <h3>Spinning Pro</h3>
+                    <p>Cardio de alto impacto con música motivadora</p>
+                </div>
+            </article>
+            <article class="gallery-item yoga" style="--item-index: 5">
+                <img src="../assets/images/yoga2.png" alt="Yoga Avanzado">
+                <div class="overlay">
+                    <h3>Yoga Avanzado</h3>
+                    <p>Para practicantes experimentados</p>
+                </div>
+            </article>
+            <article class="gallery-item musculacion" style="--item-index: 6">
+                <img src="../assets/images/fuerza.png" alt="Fuerza">
+                <div class="overlay">
+                    <h3>Fuerza y Resistencia</h3>
+                    <p>Entrena con pesas y mejora tu condición física</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="schedule">
+        <h2>Horarios de Clases</h2>
+        <div class="table-container">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Hora">07:00</td>
+                        <td data-label="Lunes" class="spinning">Spinning</td>
+                        <td data-label="Martes" class="yoga">Yoga</td>
+                        <td data-label="Miércoles" class="spinning">Spinning</td>
+                        <td data-label="Jueves" class="yoga">Yoga</td>
+                        <td data-label="Viernes" class="spinning">Spinning</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Hora">09:00</td>
+                        <td data-label="Lunes" class="yoga">Yoga</td>
+                        <td data-label="Martes" class="spinning">Spinning</td>
+                        <td data-label="Miércoles" class="crossfit">CrossFit</td>
+                        <td data-label="Jueves" class="yoga">Yoga</td>
+                        <td data-label="Viernes" class="spinning">Spinning</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Hora">12:00</td>
+                        <td data-label="Lunes" class="crossfit">CrossFit</td>
+                        <td data-label="Martes" class="musculacion">Musculación</td>
+                        <td data-label="Miércoles" class="crossfit">CrossFit</td>
+                        <td data-label="Jueves" class="musculacion">Musculación</td>
+                        <td data-label="Viernes" class="crossfit">CrossFit</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Hora">17:00</td>
+                        <td data-label="Lunes" class="spinning">Spinning</td>
+                        <td data-label="Martes" class="crossfit">CrossFit</td>
+                        <td data-label="Miércoles" class="spinning">Spinning</td>
+                        <td data-label="Jueves" class="crossfit">CrossFit</td>
+                        <td data-label="Viernes" class="spinning">Spinning</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Hora">19:00</td>
+                        <td data-label="Lunes" class="musculacion">Musculación</td>
+                        <td data-label="Martes" class="yoga">Yoga</td>
+                        <td data-label="Miércoles" class="musculacion">Musculación</td>
+                        <td data-label="Jueves" class="yoga">Yoga</td>
+                        <td data-label="Viernes" class="musculacion">Musculación</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

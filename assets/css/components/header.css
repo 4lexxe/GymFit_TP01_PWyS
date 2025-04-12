@@ -1,0 +1,217 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    padding: 0.5rem 2rem;
+    width: 100%;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-left: 40px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.logo:hover {
+    color: var(--secondary-color);
+}
+
+.menu-container {
+    flex-grow: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Estilos para el mega-menú */
+.menu-item {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    background: var(--card-bg);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    z-index: 10;
+}
+
+.menu-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+}
+
+.mega-menu-column h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.1rem;
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mega-menu-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.mega-menu-column ul li a {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.mega-menu-column ul li a:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    padding-left: 0.8rem;
+}
+
+/* Responsive menu */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 101;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .menu-container {
+        display: none;
+    }
+
+    .header {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        padding-left: 30px;
+    }
+
+    .logo::before {
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* Mostrar menú al usar :target para navegación sin JS */
+    .menu-container:target {
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mega-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Fitness - GymFit</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <header class="header clip-diagonal">
+        <nav class="nav-main">
+            <a href="/" class="logo">GymFit</a>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="clases.html">Clases</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Clases Grupales</h3>
+                                    <ul>
+                                        <li><a href="clases.html#yoga">Yoga</a></li>
+                                        <li><a href="clases.html#pilates">Pilates</a></li>
+                                        <li><a href="clases.html#spinning">Spinning</a></li>
+                                        <li><a href="clases.html#crossfit">CrossFit</a></li>
+                                        <li><a href="clases.html#musculacion">Musculación</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <h1>Blog Fitness</h1>
+        <p>Consejos, información y motivación para tu rutina diaria</p>
+    </section>
+
+    <main class="blog-container">
+        <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+                <h3>Categorías</h3>
+                <div class="tags-filter">
+                    <input type="radio" name="tag" id="all-tags" checked>
+                    <input type="radio" name="tag" id="nutricion">
+                    <input type="radio" name="tag" id="ejercicios">
+                    <input type="radio" name="tag" id="bienestar">
+
+                    <div class="tags-list">
+                        <label for="all-tags" class="tag">Todos</label>
+                        <label for="nutricion" class="tag">Nutrición</label>
+                        <label for="ejercicios" class="tag">Ejercicios</label>
+                        <label for="bienestar" class="tag">Bienestar</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Artículos populares</h3>
+                <ul class="popular-posts">
+                    <li>
+                        <a href="#">10 alimentos que potencian tus entrenamientos</a>
+                        <span class="post-date">15 Mayo, 2023</span>
+                    </li>
+                    <li>
+                        <a href="#">Cómo maximizar tu rutina en 30 minutos</a>
+                        <span class="post-date">28 Abril, 2023</span>
+                    </li>
+                    <li>
+                        <a href="#">La importancia del descanso activo</a>
+                        <span class="post-date">10 Abril, 2023</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="blog-grid">
+            <article class="blog-post nutricion reveal-on-scroll" style="--item-index: 1">
+                <div class="post-image">
+                    <img src="../assets/images/nutricion.png" alt="Nutrición">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="tag-label nutricion-tag">Nutrición</span>
+                        <span class="post-date">20 Junio, 2023</span>
+                    </div>
+                    <h2>Guía Completa de Nutrición</h2>
+                    <p>Descubre los mejores consejos para una alimentación saludable que complementará tu rutina de ejercicios y maximizará tus resultados.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (2)</h3>
+                        <div class="comment">
+                            <div class="comment-avatar" data-initials="JP"></div>
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <strong>Juan Pérez</strong>
+                                    <span class="comment-date">Hace 3 días</span>
+                                </div>
+                                <p>Excelente artículo, muy informativo. Definitivamente voy a aplicar estos consejos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="comment">
+                            <div class="comment-avatar" data-initials="MR"></div>
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <strong>María Rodríguez</strong>
+                                    <span class="comment-date">Hace 5 días</span>
+                                </div>
+                                <p>¡Gracias por compartir esta información! Justo lo que necesitaba para complementar mi entrenamiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post ejercicios reveal-on-scroll" style="--item-index: 2">
+                <div class="post-image">
+                    <img src="../assets/images/ejercicio.png" alt="Ejercicios">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="tag-label ejercicios-tag">Ejercicios</span>
+                        <span class="post-date">15 Junio, 2023</span>
+                    </div>
+                    <h2>5 Ejercicios Esenciales para Ganar Masa Muscular</h2>
+                    <p>Conoce los ejercicios fundamentales que no pueden faltar en tu rutina de entrenamiento para desarrollar músculo de manera efectiva.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (1)</h3>
+                        <div class="comment">
+                            <div class="comment-avatar" data-initials="CL"></div>
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <strong>Carlos López</strong>
+                                    <span class="comment-date">Hace 1 día</span>
+                                </div>
+                                <p>He probado esta rutina y los resultados son increíbles. ¡Muy recomendado!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-post bienestar reveal-on-scroll" style="--item-index: 3">
+                <div class="post-image">
+                    <img src="../assets/images/bienestar.png" alt="Bienestar">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="tag-label bienestar-tag">Bienestar</span>
+                        <span class="post-date">10 Junio, 2023</span>
+                    </div>
+                    <h2>Cómo el Ejercicio Mejora tu Salud Mental</h2>
+                    <p>Analizamos la relación entre la actividad física regular y la mejora en los indicadores de salud mental, estrés y bienestar general.</p>
+                    <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (0)</h3>
+                        <p class="no-comments">Sé el primero en comentar</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div class="pagination">
+            <a href="#" class="page-link active">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
+            <span class="page-separator">...</span>
+            <a href="#" class="page-link">8</a>
+            <a href="#" class="page-link next">Siguiente →</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- Similar al footer del index -->
+    </footer>
+
+    <script>
+        // Simple script para activar el efecto scroll reveal
+        document.addEventListener("DOMContentLoaded", function() {
+            // Función para verificar si un elemento está en el viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Obtenemos todos los elementos con la clase reveal-on-scroll
+            const items = document.querySelectorAll('.reveal-on-scroll');
+            
+            // Función que marca elementos como activos cuando están en el viewport
+            function checkScroll() {
+                items.forEach(item => {
+                    if (isElementInViewport(item)) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+            
+            // Verificamos la posición inicial de los elementos
+            checkScroll();
+            
+            // Verificamos la posición de los elementos al hacer scroll
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+</body>
+</html>

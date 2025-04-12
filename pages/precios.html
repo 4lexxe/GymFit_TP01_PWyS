@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - GymFit</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Similar al header del index -->
+    </header>
+
+    <main class="pricing-container">
+        <div class="pricing-toggle">
+            <input type="checkbox" id="pricing-switch" class="pricing-checkbox">
+            <label for="pricing-switch" class="pricing-label">
+                <span>Mensual</span>
+                <span>Anual</span>
+            </label>
+        </div>
+
+        <div class="pricing-grid">
+            <article class="pricing-card">
+                <h3>Básico</h3>
+                <div class="price">
+                    <span class="monthly">$30</span>
+                    <span class="annual">$300</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="features">
+                    <li>
+                        Acceso básico
+                        <span class="tooltip" data-tooltip="Acceso en horario reducido">ℹ</span>
+                    </li>
+                    <li>
+                        2 clases/mes
+                        <span class="tooltip" data-tooltip="Clases grupales básicas">ℹ</span>
+                    </li>
+                </ul>
+                <button class="select-plan">Elegir Plan</button>
+            </article>
+
+            <article class="pricing-card featured">
+                <!-- Similar estructura para plan Premium -->
+            </article>
+
+            <article class="pricing-card">
+                <!-- Similar estructura para plan Elite -->
+            </article>
+        </div>
+    </main>
+</body>
+</html>

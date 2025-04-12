@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - GymFit</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <header class="header clip-diagonal">
+        <nav class="nav-main">
+            <a href="/" class="logo">GymFit</a>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="clases.html">Clases</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Clases Grupales</h3>
+                                    <ul>
+                                        <li><a href="clases.html#yoga">Yoga</a></li>
+                                        <li><a href="clases.html#pilates">Pilates</a></li>
+                                        <li><a href="clases.html#spinning">Spinning</a></li>
+                                        <li><a href="clases.html#crossfit">CrossFit</a></li>
+                                        <li><a href="clases.html#musculacion">Musculación</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="entrenadores.html">Entrenadores</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <h1>Contáctanos</h1>
+        <p>Estamos aquí para ayudarte en tu camino fitness</p>
+    </section>
+
+    <main class="contact-container">
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="location-icon"></i>
+                </div>
+                <h3>Ubicación</h3>
+                <p>Facultad de Ingeniería - UNJu<br>Av. Italia esquina Martiarena<br>San Salvador de Jujuy, Argentina</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="phone-icon"></i>
+                </div>
+                <h3>Teléfono</h3>
+                <p>+1 (555) 123-4567<br>Lun-Vie: 8am - 8pm</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="email-icon"></i>
+                </div>
+                <h3>Email</h3>
+                <p>info@gymfit.com<br>soporte@gymfit.com</p>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <h2>Envíanos un mensaje</h2>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required pattern="[A-Za-zÀ-ÿ\s]{3,}" 
+                           placeholder="Tu nombre completo">
+                    <span class="validation-message">Mínimo 3 letras</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required 
+                           placeholder="Tu correo electrónico">
+                    <span class="validation-message">Email inválido</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Asunto</label>
+                <select id="subject" required>
+                    <option value="">Selecciona un tema</option>
+                    <option value="membresia">Información de Membresía</option>
+                    <option value="clases">Consulta sobre Clases</option>
+                    <option value="entrenador">Entrenador Personal</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" required minlength="10" rows="5"
+                         placeholder="¿En qué podemos ayudarte?"></textarea>
+                <span class="validation-message">Mínimo 10 caracteres</span>
+            </div>
+
+            <div class="form-footer">
+                <label for="modal-toggle" class="submit-btn" id="submitButton">
+                    <span class="button-text">Enviar Mensaje</span>
+                    <span class="spinner"></span>
+                </label>
+            </div>
+        </form>
+
+        <div class="map-container">
+            <h2>Encuéntranos</h2>
+            <div class="responsive-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.813075461683!2d-65.3031763!3d-24.1853292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f32ec11f92f%3A0xf0b9be2f196cde3c!2sFacultad%20de%20Ingenier%C3%ADa%20-%20UNJu!5e0!3m2!1ses!2sar!4v1681234567890!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación mejorado -->
+    <input type="checkbox" id="modal-toggle" class="modal-checkbox" hidden>
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon"></div>
+            <h3>¡Mensaje enviado con éxito!</h3>
+            <p>Gracias por contactarnos. Responderemos a tu mensaje lo antes posible.</p>
+            <button class="modal-close-btn" aria-label="Cerrar">
+                <label for="modal-toggle">×</label>
+            </button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+
+    <footer class="footer">
+        <!-- Similar al footer del index -->
+    </footer>
+
+    <!-- Script para demostración del modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            const modalToggle = document.getElementById('modal-toggle');
+            
+            // Evita que el formulario se envíe realmente para la demostración
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+            });
+            
+            submitButton.addEventListener('click', function() {
+                // Verificar si el formulario es válido
+                if (contactForm.checkValidity()) {
+                    // Mostrar spinner
+                    submitButton.classList.add('loading');
+                    submitButton.querySelector('.button-text').style.opacity = '0';
+                    submitButton.querySelector('.spinner').style.display = 'inline-block';
+                    
+                    // Simular envío (2 segundos)
+                    setTimeout(function() {
+                        // Esconder spinner
+                        submitButton.classList.remove('loading');
+                        submitButton.querySelector('.button-text').style.opacity = '1';
+                        submitButton.querySelector('.spinner').style.display = 'none';
+                        
+                        // Mostrar modal
+                        modalToggle.checked = true;
+                        
+                        // Reiniciar formulario
+                        contactForm.reset();
+                    }, 2000);
+                } else {
+                    // Solicitar validación al navegador
+                    contactForm.reportValidity();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

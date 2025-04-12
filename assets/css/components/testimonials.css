@@ -1,0 +1,190 @@
+/* Estilos base para la sección de testimonios */
+.testimonials {
+  padding: 5rem 0;
+  background: linear-gradient(to right, rgba(33, 150, 243, 0.05), rgba(76, 175, 80, 0.05));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: #333;
+}
+
+/* Estilos de las tarjetas de testimonios */
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #10b981);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.testimonial-avatar::before {
+  content: attr(data-initials);
+}
+
+.testimonial-avatar::after {
+  content: '"';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  background: #f59e0b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transform: rotate(10deg);
+}
+
+.testimonial-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: #3b82f6;
+  font-size: 1.1rem;
+}
+
+/* Estilos del carrusel y estructura */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-items {
+  display: flex;
+  width: 500%; /* 100% por cada ítem */
+  animation: loopSlide 30s linear infinite;
+}
+
+.carousel-item {
+  min-width: 20%; /* Cada tarjeta ocupa 20% del ancho del contenedor */
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+
+/* Animación automática derecha a izquierda */
+@keyframes loopSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Efecto de profundidad para tarjetas activas */
+.carousel-item:hover {
+  transform: translateY(-10px);
+  z-index: 10;
+}
+
+.carousel-item:hover .testimonial-card {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Navegación del carrusel */
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 0;
+  gap: 0.8rem;
+}
+
+.carousel-nav label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-nav label:hover {
+  background-color: #3b82f6;
+  transform: scale(1.2);
+}
+
+/* Pausar la animación cuando el usuario interactúa */
+.carousel-container:hover .carousel-items {
+  animation-play-state: paused;
+}
+
+/* Seleccionar radio button y mostrar tarjeta activa */
+#item-1:checked ~ .carousel-nav label[for="item-1"],
+#item-2:checked ~ .carousel-nav label[for="item-2"],
+#item-3:checked ~ .carousel-nav label[for="item-3"],
+#item-4:checked ~ .carousel-nav label[for="item-4"],
+#item-5:checked ~ .carousel-nav label[for="item-5"] {
+  background-color: #3b82f6;
+  transform: scale(1.2);
+}
+
+/* Ocultar los radio buttons */
+#item-1, #item-2, #item-3, #item-4, #item-5 {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-items {
+      width: 1000%; /* Ajuste para mejor visualización en móviles */
+      animation: loopSlide 40s linear infinite;
+  }
+  
+  .carousel-item {
+      min-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-card {
+      padding: 2rem 1.5rem;
+  }
+  
+  .testimonial-card p {
+      font-size: 1rem;
+  }
+  
+  .section-title {
+      font-size: 1.8rem;
+  }
+}

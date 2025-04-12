@@ -1,0 +1,156 @@
+/* Clip-path shapes mejorados */
+.clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.clip-circle {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.clip-hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Formas más avanzadas */
+.clip-wave {
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        75% 75%,
+        75% 100%,
+        50% 75%,
+        25% 100%,
+        25% 75%,
+        0% 75%
+    );
+}
+
+.clip-message {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+
+/* Mask images */
+.mask-gradient {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.mask-radial {
+    mask-image: radial-gradient(circle at center, black 50%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 70%);
+}
+
+/* Scroll Snap */
+.snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.snap-section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+/* Mini scroll snap para carruseles */
+.mini-snap-container {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    display: flex;
+    width: 100%;
+    scrollbar-width: none; /* Firefox */
+}
+
+.mini-snap-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.mini-snap-item {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* Micro-interacciones */
+.btn,
+.cta-button,
+.card-button {
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-normal), background-color var(--transition-normal);
+}
+
+.btn::after,
+.cta-button::after,
+.card-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after,
+.cta-button:active::after,
+.card-button:active::after {
+    width: 200%;
+    height: 200%;
+}
+
+/* Focus visible con estado :focus-visible */
+.btn:focus-visible,
+.cta-button:focus-visible,
+.card-button:focus-visible {
+    outline: 3px solid var(--focus-ring-color);
+    outline-offset: 2px;
+}
+
+/* Hover efecto de elevación */
+.elevation-hover {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.elevation-hover:hover,
+.elevation-hover:focus-within {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Glass effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .glass-effect {
+    background: rgba(30, 30, 30, 0.8);
+    border-color: rgba(80, 80, 80, 0.2);
+}
+
+/* Image treatments */
+.grayscale-hover {
+    filter: grayscale(100%);
+    transition: filter var(--transition-normal);
+}
+
+.grayscale-hover:hover {
+    filter: grayscale(0%);
+}
+
+.blur-hover {
+    filter: blur(0);
+    transition: filter var(--transition-normal);
+}
+
+.blur-hover:hover {
+    filter: blur(2px);
+}
