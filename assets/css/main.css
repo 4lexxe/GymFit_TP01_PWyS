@@ -3,31 +3,45 @@
 @import 'utils/typography.css';
 @import 'utils/animations.css';
 @import 'utils/accessibility.css';
+
+/* Componentes */
 @import 'components/header.css';
 @import 'components/hero.css';
 @import 'components/cards.css';
-@import 'components/carousel.css';
-@import 'components/counter.css';
-@import 'components/footer.css';
-@import 'components/gallery.css';
-@import 'components/schedule.css';
-@import 'components/trainer-card.css';
-@import 'components/skill-bars.css';
-@import 'components/rating.css';
-@import 'components/contact-form.css';
-@import 'components/modal.css';
-@import 'components/pricing.css';
-@import 'components/blog.css';
-@import 'components/comments.css';
-@import 'components/darkmode-toggle.css';
-@import 'utils/scroll-reveal.css';
-@import 'layout/grid.css';
-@import 'layout/responsive.css';
-@import 'utils/effects.css';
-@import 'components/classes-hero.css';
-@import 'components/trainers-hero.css';
 @import 'components/features.css';
 @import 'components/testimonials.css';
+@import 'components/counter.css';
+@import 'components/gallery.css';
+@import 'components/pricing.css';
+@import 'components/footer.css';
+@import 'components/darkmode-toggle.css';
+@import 'components/carousel.css';
+@import 'components/contact-form.css';
+@import 'components/modal.css';
+@import 'components/blog.css';
+@import 'components/comments.css';
+@import 'components/class-filters.css'; /* Nuevo componente para filtros de clases */
+@import 'components/masonry-gallery.css';
+@import 'components/zoom-cards.css';
+@import 'components/schedule-table.css';
+
+/* Componentes de la página de entrenadores */
+@import 'components/trainer-cards.css';
+@import 'components/skill-bars.css';
+@import 'components/rating-stars.css';
+
+/* Importar Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* Importar Animate.css para animaciones */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+/* Variables personalizadas que extienden Bootstrap */
+:root {
+    --bs-primary: #4CAF50;
+    --bs-secondary: #2196F3;
+    --bs-accent: #FF4081;
+}
 
 * {
     margin: 0;
@@ -43,6 +57,40 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .dropdown-item {
+    color: #f8f9fa;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #3d3d3d;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -53,6 +101,22 @@ body {
 /* Transiciones globales */
 a, button {
     transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+/* Estilo para el skip link accesible */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: var(--bs-primary);
+    color: white;
+    padding: 10px 15px;
+    z-index: 1001;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 /* Estilos de texto globales */
@@ -76,3 +140,140 @@ a, button {
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 .mt-5 { margin-top: 3rem; }
+
+/* Estilos para MegaMenu */
+.megamenu {
+    padding: 1rem 0;
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.dropdown-header {
+    color: var(--bs-primary);
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la sección hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para las cards */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+}
+
+.shadow-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Estilos para la sección de testimonios */
+.testimonial-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.testimonial-avatar::before {
+    content: attr(data-initials);
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--bs-primary);
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+}
+
+/* Feature icons */
+.feature-icon {
+    color: var(--bs-primary);
+}
+
+/* Media queries adicionales para responsividad */
+@media (max-width: 992px) {
+    .megamenu {
+        padding: 0.5rem;
+    }
+    
+    .hero {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .testimonial-card {
+        margin-bottom: 2rem;
+    }
+}

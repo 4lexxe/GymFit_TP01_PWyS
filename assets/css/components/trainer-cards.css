@@ -1,0 +1,197 @@
+/* Estilos para las tarjetas de entrenadores con efecto flip */
+.trainer-grid {
+    margin-bottom: 2rem;
+}
+
+/* Contenedor principal de la tarjeta con efecto flip */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 400px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Contenedor interno que maneja la rotación */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Efecto de hover para desktop */
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Control por click para dispositivos táctiles */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos compartidos entre frente y reverso */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Frente de la tarjeta */
+.flip-card-front {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.trainer-img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.trainer-info {
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.trainer-specialty {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.flip-hint {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    display: block;
+}
+
+/* Reverso de la tarjeta */
+.flip-card-back {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.trainer-details {
+    flex: 1;
+}
+
+.trainer-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.trainer-details p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Certificaciones */
+.trainer-certifications {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.certification-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Botón de contacto */
+.trainer-contact {
+    margin-top: auto;
+}
+
+/* Botones de filtro */
+.trainer-filters {
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.3rem 0.5rem;
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Animación para filtrar */
+.trainer-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.trainer-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .flip-card {
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-card {
+        height: 350px;
+    }
+    
+    .trainer-img {
+        height: 70%;
+    }
+}
+
+@media (max-width: 576px) {
+    .flip-card {
+        height: 320px;
+    }
+    
+    .trainer-details h3 {
+        font-size: 1.3rem;
+    }
+    
+    .trainer-details p {
+        font-size: 0.9rem;
+    }
+}

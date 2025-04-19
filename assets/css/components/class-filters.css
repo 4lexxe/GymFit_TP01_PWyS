@@ -1,0 +1,156 @@
+/* Estilos para el sistema de filtrado de clases */
+
+/* Contenedor de filtros */
+.filter-container {
+    margin-bottom: 2rem;
+}
+
+/* Botones de filtro */
+.filter-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    margin: 0 0.3rem 0.5rem;
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Ocultar radio buttons */
+.filter-options input[type="radio"] {
+    display: none;
+}
+
+/* Estilo activo para los botones CSS */
+#all:checked ~ .filter-options label[for="all"],
+#cardio:checked ~ .filter-options label[for="cardio"],
+#strength:checked ~ .filter-options label[for="strength"],
+#mind-body:checked ~ .filter-options label[for="mind-body"],
+#hiit:checked ~ .filter-options label[for="hiit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilo activo para los botones jQuery */
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Filtrado CSS puro */
+#all:checked ~ .classes-gallery .class-item {
+    display: block;
+}
+
+#cardio:checked ~ .classes-gallery .class-item:not(.cardio),
+#strength:checked ~ .classes-gallery .class-item:not(.strength),
+#mind-body:checked ~ .classes-gallery .class-item:not(.mind-body),
+#hiit:checked ~ .classes-gallery .class-item:not(.hiit) {
+    display: none;
+}
+
+/* Etiquetas de categoría */
+.category-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cardio-tag {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.strength-tag {
+    background-color: rgba(33, 136, 56, 0.1);
+    color: #218838;
+}
+
+.mind-body-tag {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+}
+
+.hiit-tag {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+/* Detalles de clases */
+.class-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+}
+
+.detail-item i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Animación al filtrar con CSS */
+.class-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#all:not(:checked) ~ .classes-gallery .class-item:not(.show) {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Toggle para cambiar entre CSS y jQuery */
+.filter-toggle {
+    margin-top: 0.5rem;
+}
+
+/* Estilo para el avatar del instructor */
+.instructor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .class-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,81 @@
+/* Estilos para la tabla de horarios responsiva */
+.schedule-table {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.schedule-table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.schedule-table th, 
+.schedule-table td {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+}
+
+.schedule-table tbody tr {
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.schedule-table tbody tr.show-row {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para filas destacadas */
+.schedule-table tr.table-info {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.schedule-table tr.table-info:hover {
+    background-color: rgba(33, 150, 243, 0.2);
+}
+
+/* Responsive comportamiento */
+.table-responsive {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra pequeño - optimización para móvil */
+@media (max-width: 576px) {
+    .schedule-table {
+        font-size: 0.8rem;
+    }
+    
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+/* Nota informativa */
+.schedule-note {
+    border-left: 4px solid var(--primary-color);
+    padding: 0.8rem 1.2rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 4px;
+}
+
+.schedule-note i {
+    color: var(--primary-color);
+}

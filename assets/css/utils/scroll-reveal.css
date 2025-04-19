@@ -64,3 +64,136 @@
         }
     }
 }
+
+/* Estilos para las animaciones de Scroll Reveal */
+
+/* Configuración general */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Efecto de fade up */
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+}
+
+/* Efecto de fade down */
+[data-aos="fade-down"] {
+    transform: translateY(-30px);
+}
+
+[data-aos="fade-down"].aos-animate {
+    transform: translateY(0);
+}
+
+/* Efecto de fade left */
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Efecto de fade right */
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-right"].aos-animate {
+    transform: translateX(0);
+}
+
+/* Efecto zoom in */
+[data-aos="zoom-in"] {
+    transform: scale(0.9);
+}
+
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+}
+
+/* Efecto zoom out */
+[data-aos="zoom-out"] {
+    transform: scale(1.1);
+}
+
+[data-aos="zoom-out"].aos-animate {
+    transform: scale(1);
+}
+
+/* Efecto flip left */
+[data-aos="flip-left"] {
+    transform: perspective(2500px) rotateY(90deg);
+}
+
+[data-aos="flip-left"].aos-animate {
+    transform: perspective(2500px) rotateY(0);
+}
+
+/* Duraciones personalizadas */
+[data-aos][data-aos-duration="300"] {
+    transition-duration: 300ms;
+}
+
+[data-aos][data-aos-duration="500"] {
+    transition-duration: 500ms;
+}
+
+[data-aos][data-aos-duration="800"] {
+    transition-duration: 800ms;
+}
+
+[data-aos][data-aos-duration="1000"] {
+    transition-duration: 1000ms;
+}
+
+/* Demoras personalizadas */
+[data-aos][data-aos-delay="100"] {
+    transition-delay: 100ms;
+}
+
+[data-aos][data-aos-delay="300"] {
+    transition-delay: 300ms;
+}
+
+[data-aos][data-aos-delay="500"] {
+    transition-delay: 500ms;
+}
+
+/* Ajustes para móviles - reducir efectos para mejorar rendimiento */
+@media (max-width: 768px) {
+    [data-aos] {
+        transition-duration: 400ms !important;
+    }
+    
+    [data-aos="fade-up"], 
+    [data-aos="fade-down"], 
+    [data-aos="fade-left"], 
+    [data-aos="fade-right"] {
+        transform: translate(0);
+    }
+    
+    [data-aos="zoom-in"], 
+    [data-aos="zoom-out"] {
+        transform: scale(1);
+    }
+}
+
+/* Para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+        transition-duration: 0ms !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}

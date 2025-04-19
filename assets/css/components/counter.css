@@ -1,6 +1,11 @@
+/* Estilos para la sección de contador */
 .counter {
+    position: relative;
     padding: 5rem 0;
-    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../../images/counter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
 }
 
@@ -11,35 +16,74 @@
     text-align: center;
 }
 
-.counter-item {
-    padding: 2rem;
+.counter-box {
+    padding: 2rem 1rem;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    animation: countup 0.5s forwards;
+    opacity: 0;
 }
 
-.counter-item:hover {
+.counter-box:hover {
     transform: translateY(-10px);
+}
+
+.counter-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.counter-box:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.counter-box:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.counter-box:nth-child(4) {
+    animation-delay: 0.7s;
 }
 
 .counter-number {
     font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: block;
-    animation: countUp 2s ease-out forwards;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    font-weight: 700;
+    margin-bottom: 0;
+    display: inline-block;
+    line-height: 1;
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.counter-plus {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .counter-text {
     font-size: 1.2rem;
-    display: block;
+    margin-top: 1rem;
+    position: relative;
 }
 
-@keyframes countUp {
+.counter-text::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+}
+
+/* Animación de inicio para los contadores */
+@keyframes countup {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -47,5 +91,16 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .counter-number {
+        font-size: 2.8rem;
+    }
+    
+    .counter-text {
+        font-size: 1rem;
     }
 }

@@ -1,8 +1,21 @@
-/* Sección de comentarios mejorada con estilo periódico */
+/* Estilos para el sistema de comentarios del blog */
+
+/* Sección de comentarios */
 .comments-section {
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding-top: 1.5rem;
     border-top: 1px dotted var(--border-color); /* Estilo periódico - línea punteada */
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: var(--gray-600);
+    font-size: 1.1rem;
 }
 
 .comments-section h3 {
@@ -23,26 +36,44 @@
     color: var(--primary-color);
 }
 
-.comment {
+/* Contenedor de comentarios */
+.comments-container {
+    margin-top: 2rem;
+}
+
+/* Elemento de comentario individual */
+.comment-item {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
-    animation: fadeInUp 0.5s ease-out;
-    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.comment-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Comentario destacado */
+.comment-item.highlighted {
+    background-color: rgba(76, 175, 80, 0.05);
+    border-left: 4px solid var(--primary-color);
 }
 
 /* Avatar mejorado con pseudo-elementos */
 .comment-avatar {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--gray-500), var(--gray-700));
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 0.9rem;
     flex-shrink: 0;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
@@ -91,22 +122,29 @@
 .comment-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
     border-bottom: 1px dotted var(--border-color); /* Estilo periódico */
     padding-bottom: 0.5rem;
 }
 
+.comment-author {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
+}
+
 .comment-date {
-    font-size: 0.8rem;
-    color: var(--gray-800);
+    color: var(--gray-600);
+    font-size: 0.85rem;
     font-style: italic; /* Estilo periódico */
 }
 
 .comment-content p {
     margin-bottom: 0;
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
     quotes: """ """; /* Comillas tipográficas para estilo periódico */
 }
 
@@ -128,6 +166,136 @@
     vertical-align: -0.15em;
 }
 
+/* Botón para destacar comentario */
+.comment-highlight-btn {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.comment-highlight-btn:hover {
+    color: #FFD700; /* Color dorado para hover */
+    transform: scale(1.2);
+}
+
+.comment-highlight-btn.active {
+    color: #FFD700;
+}
+
+/* Texto del comentario */
+.comment-text {
+    margin-bottom: 1rem;
+}
+
+.comment-text p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Acciones del comentario */
+.comment-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--gray-600);
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: var(--primary-color);
+}
+
+.btn-link.active {
+    color: var(--primary-color);
+}
+
+/* Formulario de respuesta */
+.reply-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Respuestas a comentarios */
+.comment-replies {
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    border-left: 2px solid var(--gray-200);
+    padding-left: 1.5rem;
+}
+
+.reply-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.reply-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Badge de autor */
+.author-badge {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+/* Formulario para comentar */
+.comment-form-container {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.comment-form-container h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Tooltip personalizado para botones */
+button[data-tooltip] {
+    position: relative;
+}
+
+button[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: var(--gray-800);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+button[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 .no-comments {
     font-style: italic;
     color: var(--gray-800);
@@ -136,6 +304,34 @@
     font-family: 'Georgia', serif; /* Fuente estilo periódico */
     border: 1px dotted var(--border-color); /* Estilo periódico */
     border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .comment-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .comment-avatar {
+        align-self: flex-start;
+    }
+    
+    .comment-replies {
+        margin-left: 1rem;
+    }
+    
+    .comment-header {
+        flex-wrap: wrap;
+    }
+    
+    .comment-author {
+        font-size: 1rem;
+    }
+    
+    .comment-date {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 576px) {

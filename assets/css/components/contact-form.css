@@ -1,27 +1,14 @@
 /* Hero de contacto */
 .contact-hero {
-    height: 40vh;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 2rem;
+    padding: 5rem 0;
+    text-align: center;
 }
 
 .contact-hero h1 {
-    font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    animation: fadeInUp 1s ease-out;
-}
-
-.contact-hero p {
-    font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-    animation: fadeInUp 1s ease-out 0.3s;
 }
 
 /* Contenedor principal */
@@ -42,60 +29,106 @@
     margin-bottom: 1rem;
 }
 
-.info-card {
+/* Tarjeta de información de contacto */
+.contact-card {
     background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.3s ease;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
 }
 
-.info-card:hover {
-    transform: translateY(-10px);
+.contact-card-item {
+    display: flex;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
 }
 
-.info-icon {
-    width: 60px;
-    height: 60px;
+.contact-card-item:last-child {
+    border-bottom: none;
+}
+
+.contact-card-item:hover {
+    background-color: rgba(76, 175, 80, 0.05);
+    transform: translateY(-3px);
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.icon-wrapper i {
     color: white;
     font-size: 1.5rem;
 }
 
-.location-icon::before {
-    content: "📍";
+.contact-details {
+    flex: 1;
 }
 
-.phone-icon::before {
-    content: "📱";
+.contact-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--gray-800);
 }
 
-.email-icon::before {
-    content: "✉️";
+.contact-details p {
+    color: var(--gray-700);
+    margin-bottom: 0;
 }
 
-.info-card h3 {
-    margin-bottom: 0.8rem;
+.contact-details a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
     color: var(--primary-color);
 }
 
-.info-card p {
-    line-height: 1.6;
-    color: var(--text-color);
+/* Iconos sociales */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-700);
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Formulario */
-.contact-form {
+.contact-form-container {
     background-color: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
 }
 
 .contact-form h2 {
@@ -104,68 +137,200 @@
     text-align: center;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.form-group {
+.contact-form .form-group {
     margin-bottom: 1.5rem;
     position: relative;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--text-color);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--gray-300);
+.contact-form .form-control {
     border-radius: 8px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    border: 2px solid var(--gray-300);
+    padding: 0.8rem 1rem;
+    transition: all 0.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.contact-form .form-control:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
-    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
 }
 
-.form-group input:valid,
-.form-group select:valid,
-.form-group textarea:valid {
+.contact-form .form-control.is-valid {
     border-color: var(--success-color);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.form-group input:invalid:not(:placeholder-shown),
-.form-group textarea:invalid:not(:placeholder-shown) {
+.contact-form .form-control.is-invalid {
     border-color: var(--error-color);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.validation-message {
+.valid-feedback,
+.invalid-feedback {
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    display: none;
+}
+
+.valid-feedback {
+    color: var(--success-color);
+}
+
+.invalid-feedback {
+    color: var(--error-color);
+}
+
+/* Estilos para las etiquetas con énfasis */
+.contact-form label.focused {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Mejoras para el contador de caracteres */
+.char-counter {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    text-align: right;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.pulse {
+    animation: pulse 0.3s ease-in-out;
+}
+
+.warning-shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Mejoras para el mensaje de límite de caracteres */
+.char-limit-alert {
     display: none;
     color: var(--error-color);
     font-size: 0.8rem;
-    position: absolute;
-    left: 0;
-    bottom: -20px;
-    transition: opacity 0.3s;
+    margin-top: 0.25rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
 }
 
-input:invalid:not(:placeholder-shown) ~ .validation-message,
-textarea:invalid:not(:placeholder-shown) ~ .validation-message {
+/* Mejoras para el spinner del botón */
+.processing {
+    position: relative;
+    overflow: hidden;
+}
+
+.processing:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+}
+
+/* Animación del checkmark mejorada */
+.success-animation {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: var(--success-color);
+    fill: none;
+    animation: none;
+}
+
+.checkmark-circle.animate {
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     display: block;
+    stroke-width: 2;
+    stroke: var(--success-color);
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px var(--success-color);
+    animation: none;
+    position: relative;
+    margin: 0 auto;
+}
+
+.checkmark.animate {
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: none;
+}
+
+.checkmark-check.animate {
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+/* Animación de sacudida para errores */
+.shake {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Animación de éxito para el formulario */
+.success-animation {
+    animation: none;
+}
+
+.contact-form-container.success-animation {
+    animation: successPulse 1s ease-in-out;
+}
+
+/* Definición de keyframes */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes shimmer {
+    100% { left: 100%; }
+}
+
+@keyframes successPulse {
+    0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
 }
 
 .form-footer {
@@ -248,6 +413,7 @@ textarea:invalid:not(:placeholder-shown) ~ .validation-message {
 
 /* Mapa */
 .map-container {
+    margin-top: 3rem;
     text-align: center;
 }
 
@@ -257,21 +423,21 @@ textarea:invalid:not(:placeholder-shown) ~ .validation-message {
 }
 
 .responsive-map {
-    position: relative;
     overflow: hidden;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 50%;
+    position: relative;
     height: 0;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
 }
 
 .responsive-map iframe {
-    position: absolute;
-    top: 0;
     left: 0;
-    width: 100%;
+    top: 0;
     height: 100%;
-    border: 0;
+    width: 100%;
+    position: absolute;
+    border: none;
 }
 
 /* Keyframes para spinner */
@@ -280,27 +446,139 @@ textarea:invalid:not(:placeholder-shown) ~ .validation-message {
     100% { transform: rotate(360deg); }
 }
 
-/* Success icon */
-.success-icon {
-    display: block;
+/* Animación del checkmark en el modal */
+.success-animation {
+    margin: 0 auto;
     width: 80px;
     height: 80px;
-    margin: 0 auto 1.5rem;
-    background-color: var(--success-color);
-    border-radius: 50%;
-    position: relative;
 }
 
-.success-icon::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 28%;
-    width: 20px;
-    height: 40px;
-    border: solid white;
-    border-width: 0 4px 4px 0;
-    transform: translateY(-65%) rotate(45deg);
+.checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: var(--success-color);
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px var(--success-color);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: var(--success-color);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px rgba(76, 175, 80, 0.1);
+    }
+}
+
+/* Correcciones para validaciones en tiempo real */
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    border-color: var(--success-color) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat;
+    background-position: center right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: var(--error-color) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") !important;
+    background-repeat: no-repeat;
+    background-position: center right calc(0.375em + 0.1875rem);
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Arreglo para ocultar la alerta de límite de caracteres al principio */
+.char-limit-alert {
+    display: none;
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* Estilos para mejorar la visualización en dispositivos móviles */
+@media (max-width: 576px) {
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-label {
+        font-size: 0.95rem;
+    }
+    
+    .form-check-label {
+        font-size: 0.9rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Mejora en la animación del checkmark */
+.checkmark-circle.animate {
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check.animate {
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+/* Mejora visual para los estados focus */
+.form-control:focus,
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+}
+
+/* Estilo hover para el enlace de política de privacidad */
+.form-check-label a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.form-check-label a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 /* Responsive */
@@ -316,5 +594,13 @@ textarea:invalid:not(:placeholder-shown) ~ .validation-message {
     .form-grid {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+    
+    .responsive-map {
+        padding-bottom: 75%;
     }
 }

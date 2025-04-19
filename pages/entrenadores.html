@@ -4,257 +4,521 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrenadores - GymFit</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-    <header class="header clip-diagonal">
-        <nav class="nav-main">
-            <a href="/" class="logo">GymFit</a>
-            <div class="menu-container">
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a href="clases.html">Clases</a>
-                        <div class="mega-menu">
-                            <div class="mega-menu-content">
-                                <div class="mega-menu-column">
-                                    <h3>Clases Grupales</h3>
-                                    <ul>
-                                        <li><a href="clases.html#yoga">Yoga</a></li>
-                                        <li><a href="clases.html#pilates">Pilates</a></li>
-                                        <li><a href="clases.html#spinning">Spinning</a></li>
-                                        <li><a href="clases.html#crossfit">CrossFit</a></li>
-                                        <li><a href="clases.html#musculacion">Musculación</a></li>
-                                    </ul>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+        <!-- Navbar con Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">GymFit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Clases
+                            </a>
+                            <div class="dropdown-menu megamenu w-100">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="dropdown-header">Cardio</h6>
+                                            <a class="dropdown-item" href="#spinning">Spinning</a>
+                                            <a class="dropdown-item" href="#zumba">Zumba</a>
+                                            <a class="dropdown-item" href="#bodyCombat">Body Combat</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="dropdown-header">Fuerza</h6>
+                                            <a class="dropdown-item" href="#bodyPump">Body Pump</a>
+                                            <a class="dropdown-item" href="#crossfit">Crossfit</a>
+                                            <a class="dropdown-item" href="#functional">Entrenamiento Funcional</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="dropdown-header">Mente-Cuerpo</h6>
+                                            <a class="dropdown-item" href="#yoga">Yoga</a>
+                                            <a class="dropdown-item" href="#pilates">Pilates</a>
+                                            <a class="dropdown-item" href="#stretching">Stretching</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li><a href="entrenadores.html">Entrenadores</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
-                </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="entrenadores.html" aria-current="page">Entrenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="instalaciones.html">Instalaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="precios.html">Precios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="btn btn-primary">Contacto</a>
+                </div>
             </div>
         </nav>
     </header>
 
     <section class="trainers-hero">
-        <h1>Nuestro Equipo</h1>
-        <p>Conoce a los profesionales que te guiarán en tu camino fitness</p>
+        <div class="container">
+            <h1>Nuestros Entrenadores</h1>
+            <p>Conoce a los profesionales que te guiarán en tu camino fitness</p>
+        </div>
     </section>
 
-    <main class="trainers-container">
-        <div class="trainers-grid">
-            <article class="trainer-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/images/JUAN.png" alt="Entrenador Juan">
-                        <div class="trainer-info">
-                            <h3>Juan Pérez</h3>
-                            <span class="trainer-specialty">Especialista en Musculación</span>
-                            <div class="rating">
-                                <input type="radio" id="star5-1" name="rating-1" value="5" checked>
-                                <label for="star5-1"></label>
-                                <input type="radio" id="star4-1" name="rating-1" value="4">
-                                <label for="star4-1"></label>
-                                <input type="radio" id="star3-1" name="rating-1" value="3">
-                                <label for="star3-1"></label>
-                                <input type="radio" id="star2-1" name="rating-1" value="2">
-                                <label for="star2-1"></label>
-                                <input type="radio" id="star1-1" name="rating-1" value="1">
-                                <label for="star1-1"></label>
+    <main id="main-content" class="py-5">
+        <div class="container">
+            <!-- Filtros para entrenadores -->
+            <div class="trainer-filters text-center mb-4">
+                <button class="filter-btn active" data-filter="*">Todos</button>
+                <button class="filter-btn" data-filter="cardio">Cardio</button>
+                <button class="filter-btn" data-filter="strength">Fuerza</button>
+                <button class="filter-btn" data-filter="yoga">Yoga</button>
+                <button class="filter-btn" data-filter="pilates">Pilates</button>
+                <button class="filter-btn" data-filter="hiit">HIIT</button>
+            </div>
+            
+            <!-- Grid de entrenadores con tarjetas flip -->
+            <div class="row g-4 trainer-grid">
+                <!-- Entrenador 1 -->
+                <div class="col-md-6 col-lg-4 trainer-item cardio yoga">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/images/CARLOS.png" alt="Entrenador Carlos Martínez" class="trainer-img">
+                                <div class="trainer-info">
+                                    <h3>Carlos Martínez</h3>
+                                    <span class="trainer-specialty">Especialista en Crossfit y HIIT</span>
+                                    <span class="flip-hint">Toca para más información</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3>Especialidades</h3>
-                        <div class="skill-bars">
-                            <div class="skill">
-                                <span>Fuerza</span>
-                                <div class="bar"><div class="progress" style="width: 90%"></div></div>
-                                <span class="skill-value">90%</span>
+                            <div class="flip-card-back">
+                                <div class="trainer-details">
+                                    <h3>Carlos Martínez</h3>
+                                    <p>Con 10 años de experiencia en entrenamiento de alta intensidad, Carlos ha ayudado a cientos de personas a alcanzar sus objetivos fitness.</p>
+                                    
+                                    <!-- Barras de habilidades -->
+                                    <div class="skill-progress" data-value="95">
+                                        <span class="skill-name">CrossFit</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" 
+                                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="90">
+                                        <span class="skill-name">HIIT</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" 
+                                                 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="85">
+                                        <span class="skill-name">Nutrición Deportiva</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" 
+                                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Certificaciones -->
+                                    <div class="trainer-certifications">
+                                        <span class="certification-badge">CrossFit L3</span>
+                                        <span class="certification-badge">NASM CPT</span>
+                                        <span class="certification-badge">Primeros Auxilios</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="trainer-contact">
+                                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#trainerModal" data-trainer="Carlos Martínez">
+                                        Contactar
+                                    </button>
+                                </div>
                             </div>
-                            <div class="skill">
-                                <span>Flexibilidad</span>
-                                <div class="bar"><div class="progress" style="width: 80%"></div></div>
-                                <span class="skill-value">80%</span>
-                            </div>
-                            <div class="skill">
-                                <span>Cardio</span>
-                                <div class="bar"><div class="progress" style="width: 85%"></div></div>
-                                <span class="skill-value">85%</span>
-                            </div>
-                        </div>
-                        <p class="trainer-bio">
-                            Con más de 10 años de experiencia, Juan es especialista en entrenamiento de fuerza y desarrollo muscular. Ha preparado a atletas de alto rendimiento.
-                        </p>
-                        <div class="trainer-contact">
-                            <a href="#" class="btn-trainer">Agendar Clase</a>
                         </div>
                     </div>
                 </div>
-            </article>
+                
+                <!-- Entrenador 2 -->
+                <div class="col-md-6 col-lg-4 trainer-item strength hiit">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/images/LAURA.png" alt="Entrenadora Laura Sánchez" class="trainer-img">
+                                <div class="trainer-info">
+                                    <h3>Laura Sánchez</h3>
+                                    <span class="trainer-specialty">Especialista en Fuerza y Acondicionamiento</span>
+                                    <span class="flip-hint">Toca para más información</span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="trainer-details">
+                                    <h3>Laura Sánchez</h3>
+                                    <p>Ex-atleta olímpica y entrenadora personal certificada. Laura se especializa en desarrollar programas de entrenamiento de fuerza para mujeres.</p>
+                                    
+                                    <!-- Barras de habilidades -->
+                                    <div class="skill-progress" data-value="95">
+                                        <span class="skill-name">Entrenamiento de Fuerza</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" 
+                                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="90">
+                                        <span class="skill-name">Powerlifting</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" 
+                                                 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="85">
+                                        <span class="skill-name">Rehabilitación</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" 
+                                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Certificaciones -->
+                                    <div class="trainer-certifications">
+                                        <span class="certification-badge">NSCA CSCS</span>
+                                        <span class="certification-badge">ACE CPT</span>
+                                        <span class="certification-badge">Entrenamiento Olímpico</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="trainer-contact">
+                                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#trainerModal" data-trainer="Laura Sánchez">
+                                        Contactar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Entrenador 3 -->
+                <div class="col-md-6 col-lg-4 trainer-item yoga pilates">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/images/JUAN.png" alt="Entrenador Juan López" class="trainer-img">
+                                <div class="trainer-info">
+                                    <h3>Juan López</h3>
+                                    <span class="trainer-specialty">Instructor de Yoga y Pilates</span>
+                                    <span class="flip-hint">Toca para más información</span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="trainer-details">
+                                    <h3>Juan López</h3>
+                                    <p>Juan ha dedicado 15 años a la práctica y enseñanza de diferentes estilos de yoga. Su enfoque integra el bienestar físico y mental.</p>
+                                    
+                                    <!-- Barras de habilidades -->
+                                    <div class="skill-progress" data-value="95">
+                                        <span class="skill-name">Yoga</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" 
+                                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="85">
+                                        <span class="skill-name">Pilates</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" 
+                                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="80">
+                                        <span class="skill-name">Meditación</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" 
+                                                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Certificaciones -->
+                                    <div class="trainer-certifications">
+                                        <span class="certification-badge">RYT 500</span>
+                                        <span class="certification-badge">Pilates Mat</span>
+                                        <span class="certification-badge">Mindfulness</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="trainer-contact">
+                                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#trainerModal" data-trainer="Juan López">
+                                        Contactar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <article class="trainer-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/images/ANA.png" alt="Entrenadora Ana">
-                        <div class="trainer-info">
-                            <h3>Ana García</h3>
-                            <span class="trainer-specialty">Profesora de Yoga</span>
-                            <div class="rating">
-                                <input type="radio" id="star5-2" name="rating-2" value="5" checked>
-                                <label for="star5-2"></label>
-                                <input type="radio" id="star4-2" name="rating-2" value="4">
-                                <label for="star4-2"></label>
-                                <input type="radio" id="star3-2" name="rating-2" value="3">
-                                <label for="star3-2"></label>
-                                <input type="radio" id="star2-2" name="rating-2" value="2">
-                                <label for="star2-2"></label>
-                                <input type="radio" id="star1-2" name="rating-2" value="1">
-                                <label for="star1-2"></label>
+                <!-- Entrenador 4 -->
+                <div class="col-md-6 col-lg-4 trainer-item cardio hiit">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="../assets/images/ANA.png" alt="Entrenadora Ana Gómez" class="trainer-img">
+                                <div class="trainer-info">
+                                    <h3>Ana Gómez</h3>
+                                    <span class="trainer-specialty">Especialista en Cardio y HIIT</span>
+                                    <span class="flip-hint">Toca para más información</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3>Especialidades</h3>
-                        <div class="skill-bars">
-                            <div class="skill">
-                                <span>Yoga</span>
-                                <div class="bar"><div class="progress" style="width: 95%"></div></div>
-                                <span class="skill-value">95%</span>
+                            <div class="flip-card-back">
+                                <div class="trainer-details">
+                                    <h3>Ana Gómez</h3>
+                                    <p>Apasionada por el training cardio de alta intensidad, Ana te ayudará a superar tus límites y mejorar tu resistencia.</p>
+                                    
+                                    <!-- Barras de habilidades -->
+                                    <div class="skill-progress" data-value="90">
+                                        <span class="skill-name">HIIT</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" 
+                                                 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="95">
+                                        <span class="skill-name">Spinning</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" 
+                                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="skill-progress" data-value="85">
+                                        <span class="skill-name">Boot Camp</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" 
+                                                 aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Certificaciones -->
+                                    <div class="trainer-certifications">
+                                        <span class="certification-badge">ACE Group Fitness</span>
+                                        <span class="certification-badge">Schwinn Cycling</span>
+                                        <span class="certification-badge">TRX</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="trainer-contact">
+                                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#trainerModal" data-trainer="Ana Gómez">
+                                        Contactar
+                                    </button>
+                                </div>
                             </div>
-                            <div class="skill">
-                                <span>Meditación</span>
-                                <div class="bar"><div class="progress" style="width: 90%"></div></div>
-                                <span class="skill-value">90%</span>
-                            </div>
-                            <div class="skill">
-                                <span>Flexibilidad</span>
-                                <div class="bar"><div class="progress" style="width: 95%"></div></div>
-                                <span class="skill-value">95%</span>
-                            </div>
-                        </div>
-                        <p class="trainer-bio">
-                            Certificada en yoga Vinyasa y Ashtanga, Ana lleva 7 años enseñando técnicas de respiración y posturas para mejorar la conexión entre cuerpo y mente.
-                        </p>
-                        <div class="trainer-contact">
-                            <a href="#" class="btn-trainer">Agendar Clase</a>
                         </div>
                     </div>
                 </div>
-            </article>
-
-            <article class="trainer-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/images/CARLOS.png" alt="Entrenador Carlos">
-                        <div class="trainer-info">
-                            <h3>Carlos Martínez</h3>
-                            <span class="trainer-specialty">Coach de CrossFit</span>
-                            <div class="rating">
-                                <input type="radio" id="star5-3" name="rating-3" value="5">
-                                <label for="star5-3"></label>
-                                <input type="radio" id="star4-3" name="rating-3" value="4" checked>
-                                <label for="star4-3"></label>
-                                <input type="radio" id="star3-3" name="rating-3" value="3">
-                                <label for="star3-3"></label>
-                                <input type="radio" id="star2-3" name="rating-3" value="2">
-                                <label for="star2-3"></label>
-                                <input type="radio" id="star1-3" name="rating-3" value="1">
-                                <label for="star1-3"></label>
+            </div>
+            
+            <!-- Sección de valoraciones de entrenadores -->
+            <section class="trainer-ratings mt-5 pt-5 border-top">
+                <h2 class="text-center mb-4">Valoraciones de Nuestros Clientes</h2>
+                <p class="text-center mb-5">Descubre lo que opinan nuestros miembros sobre nuestro equipo de entrenadores</p>
+                
+                <div class="row g-4">
+                    <!-- Valoración 1 -->
+                    <div class="col-md-6">
+                        <div class="rating-card">
+                            <div class="rating-header">
+                                <div class="rating-avatar" data-initials="MR"></div>
+                                <div class="rating-info">
+                                    <h4>María Rodríguez</h4>
+                                    <div class="rating-container" data-rating="5">
+                                        <div class="rating-stars">
+                                            <label>★</label>
+                                            <label>★</label>
+                                            <label>★</label>
+                                            <label>★</label>
+                                            <label>★</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rating-content">
+                                <p>"Carlos es un entrenador excepcional. Su dedicación y conocimiento han sido clave para ayudarme a alcanzar mis objetivos de fitness. Recomendado al 100%."</p>
+                                <span class="trainer-trained">Entrenador: Carlos Martínez</span>
                             </div>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <h3>Especialidades</h3>
-                        <div class="skill-bars">
-                            <div class="skill">
-                                <span>CrossFit</span>
-                                <div class="bar"><div class="progress" style="width: 92%"></div></div>
-                                <span class="skill-value">92%</span>
+                    
+                    <!-- Valoración 2 -->
+                    <div class="col-md-6">
+                        <div class="rating-card">
+                            <div class="rating-header">
+                                <div class="rating-avatar" data-initials="JP"></div>
+                                <div class="rating-info">
+                                    <h4>Jorge Pérez</h4>
+                                    <div class="rating-container" data-rating="4.5">
+                                        <div class="rating-stars">
+                                            <label>★</label>
+                                            <label>★</label>
+                                            <label>★</label>
+                                            <label>★</label>
+                                            <label class="half">★</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill">
-                                <span>Resistencia</span>
-                                <div class="bar"><div class="progress" style="width: 88%"></div></div>
-                                <span class="skill-value">88%</span>
+                            <div class="rating-content">
+                                <p>"Las clases de yoga con Juan han transformado mi bienestar. Su enfoque holístico y atención personalizada hacen que cada sesión sea especial."</p>
+                                <span class="trainer-trained">Entrenador: Juan López</span>
                             </div>
-                            <div class="skill">
-                                <span>Nutrición</span>
-                                <div class="bar"><div class="progress" style="width: 85%"></div></div>
-                                <span class="skill-value">85%</span>
-                            </div>
-                        </div>
-                        <p class="trainer-bio">
-                            Atleta de CrossFit desde 2015, Carlos se especializa en entrenamientos de alta intensidad y preparación para competiciones deportivas.
-                        </p>
-                        <div class="trainer-contact">
-                            <a href="#" class="btn-trainer">Agendar Clase</a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="trainer-card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="../assets/images/LAURA.png" alt="Entrenadora Laura">
-                        <div class="trainer-info">
-                            <h3>Laura Sánchez</h3>
-                            <span class="trainer-specialty">Instructora de Spinning</span>
-                            <div class="rating">
-                                <input type="radio" id="star5-4" name="rating-4" value="5">
-                                <label for="star5-4"></label>
-                                <input type="radio" id="star4-4" name="rating-4" value="4" checked>
-                                <label for="star4-4"></label>
-                                <input type="radio" id="star3-4" name="rating-4" value="3">
-                                <label for="star3-4"></label>
-                                <input type="radio" id="star2-4" name="rating-4" value="2">
-                                <label for="star2-4"></label>
-                                <input type="radio" id="star1-4" name="rating-4" value="1">
-                                <label for="star1-4"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3>Especialidades</h3>
-                        <div class="skill-bars">
-                            <div class="skill">
-                                <span>Spinning</span>
-                                <div class="bar"><div class="progress" style="width: 95%"></div></div>
-                                <span class="skill-value">95%</span>
-                            </div>
-                            <div class="skill">
-                                <span>Cardio</span>
-                                <div class="bar"><div class="progress" style="width: 90%"></div></div>
-                                <span class="skill-value">90%</span>
-                            </div>
-                            <div class="skill">
-                                <span>Pérdida de peso</span>
-                                <div class="bar"><div class="progress" style="width: 85%"></div></div>
-                                <span class="skill-value">85%</span>
-                            </div>
-                        </div>
-                        <p class="trainer-bio">
-                            Experta en ritmos y motivación, Laura transforma cada clase de spinning en una experiencia energética que impulsa a superar tus límites.
-                        </p>
-                        <div class="trainer-contact">
-                            <a href="#" class="btn-trainer">Agendar Clase</a>
                         </div>
                     </div>
                 </div>
-            </article>
+                
+                <!-- Formulario para añadir valoración -->
+                <div class="add-rating-form mt-5">
+                    <h3 class="text-center mb-4">¿Has entrenado con nosotros? Deja tu valoración</h3>
+                    
+                    <form id="ratingForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="ratingName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="ratingName" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa tu nombre.
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="trainerSelect" class="form-label">Entrenador</label>
+                                <select class="form-select" id="trainerSelect" required>
+                                    <option value="" selected disabled>Selecciona un entrenador</option>
+                                    <option value="Carlos Martínez">Carlos Martínez</option>
+                                    <option value="Laura Sánchez">Laura Sánchez</option>
+                                    <option value="Juan López">Juan López</option>
+                                    <option value="Ana Gómez">Ana Gómez</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor, selecciona un entrenador.
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label class="form-label d-block">Tu valoración</label>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <input type="radio" name="rating" id="star5" value="5" required>
+                                        <label for="star5">★</label>
+                                        <input type="radio" name="rating" id="star4" value="4">
+                                        <label for="star4">★</label>
+                                        <input type="radio" name="rating" id="star3" value="3">
+                                        <label for="star3">★</label>
+                                        <input type="radio" name="rating" id="star2" value="2">
+                                        <label for="star2">★</label>
+                                        <input type="radio" name="rating" id="star1" value="1">
+                                        <label for="star1">★</label>
+                                    </div>
+                                    <span class="live-rating-value ms-2">0/5</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Por favor, selecciona una valoración.
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <label for="ratingComment" class="form-label">Comentario</label>
+                                <textarea class="form-control" id="ratingComment" rows="4" required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, deja un comentario.
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary">Enviar Valoración</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
-
-        <section class="trainers-cta">
-            <h2>¿Buscas un entrenador personalizado?</h2>
-            <p>Agenda una consulta gratuita y diseñaremos un plan a tu medida</p>
-            <a href="contacto.html" class="btn-primary">Contáctanos</a>
-        </section>
     </main>
 
+    <!-- Modal para contactar entrenador -->
+    <div class="modal fade" id="trainerModal" tabindex="-1" aria-labelledby="trainerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="trainerModalLabel">Contactar Entrenador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="trainerContactForm">
+                        <input type="hidden" id="trainerName" name="trainerName">
+                        
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Tu Nombre</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Tu Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="sendContactForm">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
-        <!-- Similar al footer del index -->
+        <!-- Contenido del footer -->
     </footer>
+
+    <!-- Botón de toggle para modo oscuro -->
+    <div class="theme-toggle-container">
+        <label class="theme-toggle" for="darkModeToggle">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="theme-toggle-slider" aria-pressed="false"></span>
+        </label>
+    </div>
+
+    <!-- jQuery primero, luego jQuery UI easing, luego Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/darkmode.js"></script>
+    <script src="../assets/js/trainer-cards.js"></script>
 </body>
 </html>

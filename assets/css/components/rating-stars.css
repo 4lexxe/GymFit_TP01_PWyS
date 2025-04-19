@@ -1,0 +1,137 @@
+/* Sistema de rating con estrellas */
+.trainer-rating {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor de las estrellas */
+.rating-stars {
+    position: relative;
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    direction: rtl; /* Dirección derecha a izquierda para orden inverso */
+    font-size: 0;
+    white-space: nowrap;
+}
+
+/* Ocultar inputs de radio */
+.rating-stars input {
+    display: none;
+}
+
+/* Crear estrellas con pseudo-elementos */
+.rating-stars label {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    padding: 0;
+    color: #ddd;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.rating-stars label::before {
+    content: '★';
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Solo para versiones interactivas */
+.user-rating label:hover,
+.user-rating label:hover ~ label,
+.user-rating input:checked ~ label {
+    color: #FFD700;
+}
+
+/* Estrellas para mostrar rating existente (no interactivo) */
+.rating-stars[data-rating] label::before {
+    color: #ddd;
+}
+
+.rating-container[data-rating="0.5"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="1"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="1"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="1.5"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="1.5"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="1.5"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="2"] .rating-stars label:nth-child(7)::before,
+.rating-container[data-rating="2"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="2"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="2"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="2.5"] .rating-stars label:nth-child(6)::before,
+.rating-container[data-rating="2.5"] .rating-stars label:nth-child(7)::before,
+.rating-container[data-rating="2.5"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="2.5"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="2.5"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="3"] .rating-stars label:nth-child(5)::before,
+.rating-container[data-rating="3"] .rating-stars label:nth-child(6)::before,
+.rating-container[data-rating="3"] .rating-stars label:nth-child(7)::before,
+.rating-container[data-rating="3"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="3"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="3"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(4)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(5)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(6)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(7)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="3.5"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(3)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(4)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(5)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(6)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(7)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="4"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(2)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(3)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(4)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(5)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(6)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(7)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(8)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(9)::before,
+.rating-container[data-rating="4.5"] .rating-stars label:nth-child(10)::before,
+.rating-container[data-rating="5"] .rating-stars label::before {
+    color: #FFD700;
+}
+
+/* Media estrella */
+.rating-stars label.half {
+    width: 0.6em;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+/* Valor numérico del rating */
+.rating-value {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+/* Versión en vivo del formulario */
+.live-rating-value {
+    font-weight: 500;
+    color: var(--primary-color);
+    min-width: 3em;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .rating-stars label {
+        font-size: 1.1rem;
+    }
+    
+    .rating-value {
+        font-size: 0.8rem;
+    }
+}

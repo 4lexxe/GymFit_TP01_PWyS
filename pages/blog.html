@@ -4,215 +4,513 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Fitness - GymFit</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- AOS CSS para animaciones de scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- CSS personalizado -->
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-    <header class="header clip-diagonal">
-        <nav class="nav-main">
-            <a href="/" class="logo">GymFit</a>
-            <div class="menu-container">
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a href="clases.html">Clases</a>
-                        <div class="mega-menu">
-                            <div class="mega-menu-content">
-                                <div class="mega-menu-column">
-                                    <h3>Clases Grupales</h3>
-                                    <ul>
-                                        <li><a href="clases.html#yoga">Yoga</a></li>
-                                        <li><a href="clases.html#pilates">Pilates</a></li>
-                                        <li><a href="clases.html#spinning">Spinning</a></li>
-                                        <li><a href="clases.html#crossfit">CrossFit</a></li>
-                                        <li><a href="clases.html#musculacion">Musculación</a></li>
-                                    </ul>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+        <!-- Navbar con Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">GymFit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Clases
+                            </a>
+                            <div class="dropdown-menu megamenu w-100">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="dropdown-header">Cardio</h6>
+                                            <a class="dropdown-item" href="#spinning">Spinning</a>
+                                            <a class="dropdown-item" href="#zumba">Zumba</a>
+                                            <a class="dropdown-item" href="#bodyCombat">Body Combat</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="dropdown-header">Fuerza</h6>
+                                            <a class="dropdown-item" href="#bodyPump">Body Pump</a>
+                                            <a class="dropdown-item" href="#crossfit">Crossfit</a>
+                                            <a class="dropdown-item" href="#functional">Entrenamiento Funcional</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="dropdown-header">Mente-Cuerpo</h6>
+                                            <a class="dropdown-item" href="#yoga">Yoga</a>
+                                            <a class="dropdown-item" href="#pilates">Pilates</a>
+                                            <a class="dropdown-item" href="#stretching">Stretching</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li><a href="entrenadores.html">Entrenadores</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
-                </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="entrenadores.html">Entrenadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="instalaciones.html">Instalaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="precios.html">Precios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="blog.html" aria-current="page">Blog</a>
+                        </li>
+                    </ul>
+                    <a href="contacto.html" class="btn btn-primary">Contacto</a>
+                </div>
             </div>
         </nav>
     </header>
 
     <section class="blog-hero">
-        <h1>Blog Fitness</h1>
-        <p>Consejos, información y motivación para tu rutina diaria</p>
+        <div class="container">
+            <h1>Blog Fitness</h1>
+            <p>Conocimiento, consejos y tendencias sobre fitness y bienestar</p>
+        </div>
     </section>
 
-    <main class="blog-container">
-        <aside class="blog-sidebar">
-            <div class="sidebar-widget">
-                <h3>Categorías</h3>
-                <div class="tags-filter">
-                    <input type="radio" name="tag" id="all-tags" checked>
-                    <input type="radio" name="tag" id="nutricion">
-                    <input type="radio" name="tag" id="ejercicios">
-                    <input type="radio" name="tag" id="bienestar">
-
-                    <div class="tags-list">
-                        <label for="all-tags" class="tag">Todos</label>
-                        <label for="nutricion" class="tag">Nutrición</label>
-                        <label for="ejercicios" class="tag">Ejercicios</label>
-                        <label for="bienestar" class="tag">Bienestar</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar-widget">
-                <h3>Artículos populares</h3>
-                <ul class="popular-posts">
-                    <li>
-                        <a href="#">10 alimentos que potencian tus entrenamientos</a>
-                        <span class="post-date">15 Mayo, 2023</span>
-                    </li>
-                    <li>
-                        <a href="#">Cómo maximizar tu rutina en 30 minutos</a>
-                        <span class="post-date">28 Abril, 2023</span>
-                    </li>
-                    <li>
-                        <a href="#">La importancia del descanso activo</a>
-                        <span class="post-date">10 Abril, 2023</span>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-
-        <section class="blog-grid">
-            <article class="blog-post nutricion reveal-on-scroll" style="--item-index: 1">
-                <div class="post-image">
-                    <img src="../assets/images/nutricion.png" alt="Nutrición">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="tag-label nutricion-tag">Nutrición</span>
-                        <span class="post-date">20 Junio, 2023</span>
-                    </div>
-                    <h2>Guía Completa de Nutrición</h2>
-                    <p>Descubre los mejores consejos para una alimentación saludable que complementará tu rutina de ejercicios y maximizará tus resultados.</p>
-                    <a href="#" class="read-more">Leer más</a>
-                    <div class="comments-section">
-                        <h3>Comentarios (2)</h3>
-                        <div class="comment">
-                            <div class="comment-avatar" data-initials="JP"></div>
-                            <div class="comment-content">
-                                <div class="comment-header">
-                                    <strong>Juan Pérez</strong>
-                                    <span class="comment-date">Hace 3 días</span>
-                                </div>
-                                <p>Excelente artículo, muy informativo. Definitivamente voy a aplicar estos consejos.</p>
-                            </div>
+    <main id="main-content" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Columna principal del blog (2/3) -->
+                <div class="col-lg-8">
+                    <!-- Filtros para el blog -->
+                    <div class="blog-filters mb-4">
+                        <h2 class="filter-title">Artículos</h2>
+                        <div class="filter-tags">
+                            <button class="filter-tag active" data-tag="all">Todos</button>
+                            <button class="filter-tag" data-tag="nutricion">Nutrición</button>
+                            <button class="filter-tag" data-tag="entrenamiento">Entrenamiento</button>
+                            <button class="filter-tag" data-tag="bienestar">Bienestar</button>
+                            <button class="filter-tag" data-tag="lifestyle">Lifestyle</button>
                         </div>
+                    </div>
+                    
+                    <!-- Grid tipo periódico para artículos -->
+                    <div class="newspaper-grid">
+                        <!-- Artículo destacado principal (ancho completo) -->
+                        <article class="blog-post featured" data-tags="entrenamiento bienestar" data-aos="fade-up">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="../assets/images/yoga2.png" alt="Nuevas tendencias de entrenamiento" class="blog-img">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="blog-content">
+                                        <div class="post-meta">
+                                            <span class="post-category">Entrenamiento</span>
+                                            <span class="post-date">15 Oct 2023</span>
+                                        </div>
+                                        <h2>Las Nuevas Tendencias de Entrenamiento que Debes Conocer en 2023</h2>
+                                        <p class="post-excerpt">Descubre las metodologías de entrenamiento más efectivas y populares de este año que están revolucionando el mundo del fitness.</p>
+                                        <div class="post-author">
+                                            <div class="author-avatar" data-initials="LM"></div>
+                                            <div class="author-info">
+                                                <span class="author-name">Laura Martínez</span>
+                                                <span class="author-title">Entrenadora Personal</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn-primary read-more">Leer más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                         
-                        <div class="comment">
-                            <div class="comment-avatar" data-initials="MR"></div>
-                            <div class="comment-content">
-                                <div class="comment-header">
-                                    <strong>María Rodríguez</strong>
-                                    <span class="comment-date">Hace 5 días</span>
+                        <!-- Artículos de tamaño normal en grid -->
+                        <article class="blog-post" data-tags="nutricion" data-aos="fade-up">
+                            <div class="blog-img-container">
+                                <img src="../assets/images/nutricion.png" alt="Mitos de nutrición" class="blog-img">
+                                <span class="post-category">Nutrición</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="post-date">10 Oct 2023</span>
+                                <h3>7 Mitos sobre Nutrición que Deberías Dejar de Creer</h3>
+                                <p class="post-excerpt">Desmontamos las creencias más comunes sobre alimentación que pueden estar saboteando tus objetivos fitness.</p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar" data-initials="CS"></div>
+                                        <span class="author-name">Carlos Sánchez</span>
+                                    </div>
+                                    <a href="#" class="read-more-link">Leer más <i class="bi bi-arrow-right"></i></a>
                                 </div>
-                                <p>¡Gracias por compartir esta información! Justo lo que necesitaba para complementar mi entrenamiento.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-post" data-tags="bienestar" data-aos="fade-up">
+                            <div class="blog-img-container">
+                                <img src="../assets/images/bienestar.png" alt="Manejo del estrés" class="blog-img">
+                                <span class="post-category">Bienestar</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="post-date">5 Oct 2023</span>
+                                <h3>Técnicas de Manejo de Estrés para Deportistas</h3>
+                                <p class="post-excerpt">Estrategias prácticas para gestionar el estrés y mejorar tu rendimiento físico y mental en competiciones y entrenamientos.</p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar" data-initials="AM"></div>
+                                        <span class="author-name">Ana Méndez</span>
+                                    </div>
+                                    <a href="#" class="read-more-link">Leer más <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-post" data-tags="entrenamiento" data-aos="fade-up">
+                            <div class="blog-img-container">
+                                <img src="../assets/images/ejercicio.png" alt="Entrenamientos HIIT" class="blog-img">
+                                <span class="post-category">Entrenamiento</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="post-date">1 Oct 2023</span>
+                                <h3>HIIT: La Guía Completa para Principiantes</h3>
+                                <p class="post-excerpt">Todo lo que necesitas saber sobre el entrenamiento de alta intensidad por intervalos y cómo incorporarlo a tu rutina.</p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar" data-initials="RN"></div>
+                                        <span class="author-name">Roberto Núñez</span>
+                                    </div>
+                                    <a href="#" class="read-more-link">Leer más <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-post" data-tags="lifestyle" data-aos="fade-up">
+                            <div class="blog-img-container">
+                                <img src="../assets/images/crossfit.png" alt="Rutina de ejercicios" class="blog-img">
+                                <span class="post-category">Lifestyle</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="post-date">25 Sep 2023</span>
+                                <h3>Cómo Mantener una Rutina de Ejercicio Cuando Tienes Poco Tiempo</h3>
+                                <p class="post-excerpt">Consejos prácticos para incorporar el ejercicio en un estilo de vida ocupado y maximizar resultados en sesiones cortas.</p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar" data-initials="EL"></div>
+                                        <span class="author-name">Elena López</span>
+                                    </div>
+                                    <a href="#" class="read-more-link">Leer más <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="blog-post" data-tags="nutricion" data-aos="fade-up">
+                            <div class="blog-img-container">
+                                <img src="../assets/images/spinning.png" alt="Preparación de comidas" class="blog-img">
+                                <span class="post-category">Nutrición</span>
+                            </div>
+                            <div class="blog-content">
+                                <span class="post-date">20 Sep 2023</span>
+                                <h3>Guía de Meal Prep: Prepara tus Comidas para toda la Semana</h3>
+                                <p class="post-excerpt">Aprende a organizar, preparar y conservar tus comidas para ahorrar tiempo y mantener una alimentación saludable.</p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar" data-initials="MG"></div>
+                                        <span class="author-name">María García</span>
+                                    </div>
+                                    <a href="#" class="read-more-link">Leer más <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Paginación -->
+                    <nav class="blog-pagination mt-5" aria-label="Navegación de blog">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                            </li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Barra lateral (1/3) -->
+                <aside class="col-lg-4">
+                    <!-- Búsqueda -->
+                    <div class="sidebar-widget search-widget" data-aos="fade-left">
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Buscar artículos..." aria-label="Buscar">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Artículos populares -->
+                    <div class="sidebar-widget popular-posts" data-aos="fade-left">
+                        <h3 class="widget-title">Artículos Populares</h3>
+                        <div class="popular-post-item">
+                            <img src="../assets/images/musculacionbasica.png" alt="Proteínas vegetales" class="popular-post-img">
+                            <div class="popular-post-content">
+                                <span class="post-category small">Nutrición</span>
+                                <h4>Las Mejores Fuentes de Proteína Vegetal</h4>
+                                <span class="post-date small">12 Oct 2023</span>
+                            </div>
+                        </div>
+                        <div class="popular-post-item">
+                            <img src="../assets/images/fuerza.png" alt="Entrenamiento en casa" class="popular-post-img">
+                            <div class="popular-post-content">
+                                <span class="post-category small">Entrenamiento</span>
+                                <h4>5 Ejercicios Efectivos para Entrenar en Casa</h4>
+                                <span class="post-date small">8 Oct 2023</span>
+                            </div>
+                        </div>
+                        <div class="popular-post-item">
+                            <img src="../assets/images/yoga.png" alt="Meditación" class="popular-post-img">
+                            <div class="popular-post-content">
+                                <span class="post-category small">Bienestar</span>
+                                <h4>Meditación para Principiantes: Guía Práctica</h4>
+                                <span class="post-date small">3 Oct 2023</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-
-            <article class="blog-post ejercicios reveal-on-scroll" style="--item-index: 2">
-                <div class="post-image">
-                    <img src="../assets/images/ejercicio.png" alt="Ejercicios">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="tag-label ejercicios-tag">Ejercicios</span>
-                        <span class="post-date">15 Junio, 2023</span>
+                    
+                    <!-- Categorías -->
+                    <div class="sidebar-widget categories-widget" data-aos="fade-left">
+                        <h3 class="widget-title">Categorías</h3>
+                        <ul class="categories-list">
+                            <li><a href="#">Nutrición <span>(12)</span></a></li>
+                            <li><a href="#">Entrenamiento <span>(15)</span></a></li>
+                            <li><a href="#">Bienestar <span>(8)</span></a></li>
+                            <li><a href="#">Lifestyle <span>(6)</span></a></li>
+                            <li><a href="#">Suplementos <span>(4)</span></a></li>
+                        </ul>
                     </div>
-                    <h2>5 Ejercicios Esenciales para Ganar Masa Muscular</h2>
-                    <p>Conoce los ejercicios fundamentales que no pueden faltar en tu rutina de entrenamiento para desarrollar músculo de manera efectiva.</p>
-                    <a href="#" class="read-more">Leer más</a>
-                    <div class="comments-section">
-                        <h3>Comentarios (1)</h3>
-                        <div class="comment">
-                            <div class="comment-avatar" data-initials="CL"></div>
-                            <div class="comment-content">
-                                <div class="comment-header">
-                                    <strong>Carlos López</strong>
-                                    <span class="comment-date">Hace 1 día</span>
+                    
+                    <!-- Suscripción al newsletter -->
+                    <div class="sidebar-widget newsletter-widget" data-aos="fade-left">
+                        <h3 class="widget-title">Suscríbete al Newsletter</h3>
+                        <p>Recibe los últimos artículos y consejos en tu correo.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Tu email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-2">Suscribirme</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Tags populares -->
+                    <div class="sidebar-widget tags-widget" data-aos="fade-left">
+                        <h3 class="widget-title">Tags Populares</h3>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag">fitness</a>
+                            <a href="#" class="tag">nutrición</a>
+                            <a href="#" class="tag">recetas</a>
+                            <a href="#" class="tag">cardio</a>
+                            <a href="#" class="tag">yoga</a>
+                            <a href="#" class="tag">hiit</a>
+                            <a href="#" class="tag">proteínas</a>
+                            <a href="#" class="tag">suplementos</a>
+                            <a href="#" class="tag">meditación</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Sección de comentarios -->
+            <section class="comments-section mt-5 pt-5 border-top">
+                <h2 class="section-title">Comentarios Recientes</h2>
+                <p class="section-subtitle mb-4">Únete a la conversación sobre fitness y bienestar</p>
+                
+                <div class="comments-container">
+                    <!-- Comentario 1 -->
+                    <div class="comment-item" data-aos="fade-up">
+                        <div class="comment-avatar" data-initials="JD"></div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <h4 class="comment-author">Juan Díaz</h4>
+                                <span class="comment-date">18 Oct 2023</span>
+                                <button class="comment-highlight-btn" data-tooltip="Destacar comentario">
+                                    <i class="bi bi-star"></i>
+                                </button>
+                            </div>
+                            <div class="comment-text">
+                                <p>Excelente artículo sobre HIIT, me ha ayudado mucho a entender por dónde empezar. Tengo una duda: ¿es recomendable hacer HIIT todos los días o es mejor intercalar con días de descanso?</p>
+                            </div>
+                            <div class="comment-actions">
+                                <button class="btn-link reply-btn"><i class="bi bi-reply"></i> Responder</button>
+                                <button class="btn-link like-btn"><i class="bi bi-hand-thumbs-up"></i> <span class="likes-count">5</span></button>
+                            </div>
+                            
+                            <!-- Formulario de respuesta (inicialmente oculto) -->
+                            <form class="reply-form d-none">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>
                                 </div>
-                                <p>He probado esta rutina y los resultados son increíbles. ¡Muy recomendado!</p>
+                                <div class="form-group mt-2 text-end">
+                                    <button type="button" class="btn btn-sm btn-secondary cancel-reply-btn me-2">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Enviar respuesta</button>
+                                </div>
+                            </form>
+                            
+                            <!-- Respuestas al comentario -->
+                            <div class="comment-replies">
+                                <div class="reply-item">
+                                    <div class="comment-avatar" data-initials="RN"></div>
+                                    <div class="comment-content">
+                                        <div class="comment-header">
+                                            <h5 class="comment-author">Roberto Núñez</h5>
+                                            <span class="comment-date">19 Oct 2023</span>
+                                            <span class="author-badge">Autor</span>
+                                        </div>
+                                        <div class="comment-text">
+                                            <p>¡Gracias por tu comentario Juan! Lo ideal es no hacer HIIT todos los días. Para principiantes recomiendo 2-3 sesiones semanales con al menos un día de recuperación entre cada una. Tu cuerpo necesita tiempo para recuperarse de la alta intensidad.</p>
+                                        </div>
+                                        <div class="comment-actions">
+                                            <button class="btn-link like-btn"><i class="bi bi-hand-thumbs-up"></i> <span class="likes-count">3</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-
-            <article class="blog-post bienestar reveal-on-scroll" style="--item-index: 3">
-                <div class="post-image">
-                    <img src="../assets/images/bienestar.png" alt="Bienestar">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="tag-label bienestar-tag">Bienestar</span>
-                        <span class="post-date">10 Junio, 2023</span>
+                    
+                    <!-- Comentario 2 -->
+                    <div class="comment-item" data-aos="fade-up">
+                        <div class="comment-avatar" data-initials="MP"></div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <h4 class="comment-author">Mónica Pérez</h4>
+                                <span class="comment-date">16 Oct 2023</span>
+                                <button class="comment-highlight-btn" data-tooltip="Destacar comentario">
+                                    <i class="bi bi-star"></i>
+                                </button>
+                            </div>
+                            <div class="comment-text">
+                                <p>Me encantó el artículo sobre mitos de nutrición. Siempre pensé que tenía que comer cada 3 horas para "activar el metabolismo". ¡Ha sido revelador aprender que este es un mito! Definitivamente voy a probar el ayuno intermitente que mencionas.</p>
+                            </div>
+                            <div class="comment-actions">
+                                <button class="btn-link reply-btn"><i class="bi bi-reply"></i> Responder</button>
+                                <button class="btn-link like-btn"><i class="bi bi-hand-thumbs-up"></i> <span class="likes-count">8</span></button>
+                            </div>
+                            
+                            <!-- Formulario de respuesta (inicialmente oculto) -->
+                            <form class="reply-form d-none">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                </div>
+                                <div class="form-group mt-2 text-end">
+                                    <button type="button" class="btn btn-sm btn-secondary cancel-reply-btn me-2">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Enviar respuesta</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <h2>Cómo el Ejercicio Mejora tu Salud Mental</h2>
-                    <p>Analizamos la relación entre la actividad física regular y la mejora en los indicadores de salud mental, estrés y bienestar general.</p>
-                    <a href="#" class="read-more">Leer más</a>
-                    <div class="comments-section">
-                        <h3>Comentarios (0)</h3>
-                        <p class="no-comments">Sé el primero en comentar</p>
+                    
+                    <!-- Comentario 3 (destacado) -->
+                    <div class="comment-item highlighted" data-aos="fade-up">
+                        <div class="comment-avatar" data-initials="AL"></div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <h4 class="comment-author">Alberto Lara</h4>
+                                <span class="comment-date">12 Oct 2023</span>
+                                <button class="comment-highlight-btn active" data-tooltip="Quitar destacado">
+                                    <i class="bi bi-star-fill"></i>
+                                </button>
+                            </div>
+                            <div class="comment-text">
+                                <p>Este blog es una de las mejores fuentes de información fitness que he encontrado. Llevo siguiendo los consejos de meal prep durante dos semanas y ya noto la diferencia: ahorro tiempo, dinero y estoy comiendo mucho más saludable. Mi consejo para los que empiezan: inviertan en recipientes de buena calidad, hace toda la diferencia.</p>
+                            </div>
+                            <div class="comment-actions">
+                                <button class="btn-link reply-btn"><i class="bi bi-reply"></i> Responder</button>
+                                <button class="btn-link like-btn active"><i class="bi bi-hand-thumbs-up-fill"></i> <span class="likes-count">15</span></button>
+                            </div>
+                            
+                            <!-- Formulario de respuesta (inicialmente oculto) -->
+                            <form class="reply-form d-none">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                </div>
+                                <div class="form-group mt-2 text-end">
+                                    <button type="button" class="btn btn-sm btn-secondary cancel-reply-btn me-2">Cancelar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Enviar respuesta</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </article>
-        </section>
-
-        <div class="pagination">
-            <a href="#" class="page-link active">1</a>
-            <a href="#" class="page-link">2</a>
-            <a href="#" class="page-link">3</a>
-            <span class="page-separator">...</span>
-            <a href="#" class="page-link">8</a>
-            <a href="#" class="page-link next">Siguiente →</a>
+                
+                <!-- Formulario de comentarios -->
+                <div class="comment-form-container mt-5" data-aos="fade-up">
+                    <h3>Deja un comentario</h3>
+                    <form class="comment-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="commentName" class="form-label">Nombre *</label>
+                                    <input type="text" class="form-control" id="commentName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="commentEmail" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="commentEmail" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="commentText" class="form-label">Comentario *</label>
+                                    <textarea class="form-control" id="commentText" rows="4" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="saveCommentInfo">
+                                    <label class="form-check-label" for="saveCommentInfo">
+                                        Guardar mi nombre y email para la próxima vez
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Publicar comentario</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
     </main>
 
     <footer class="footer">
-        <!-- Similar al footer del index -->
+        <!-- Contenido del footer -->
     </footer>
 
-    <script>
-        // Simple script para activar el efecto scroll reveal
-        document.addEventListener("DOMContentLoaded", function() {
-            // Función para verificar si un elemento está en el viewport
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
-                    rect.bottom >= 0
-                );
-            }
-            
-            // Obtenemos todos los elementos con la clase reveal-on-scroll
-            const items = document.querySelectorAll('.reveal-on-scroll');
-            
-            // Función que marca elementos como activos cuando están en el viewport
-            function checkScroll() {
-                items.forEach(item => {
-                    if (isElementInViewport(item)) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-            
-            // Verificamos la posición inicial de los elementos
-            checkScroll();
-            
-            // Verificamos la posición de los elementos al hacer scroll
-            window.addEventListener('scroll', checkScroll);
-        });
-    </script>
+    <!-- jQuery primero, luego Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS para animaciones de scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script src="../assets/js/blog.js"></script>
 </body>
 </html>
